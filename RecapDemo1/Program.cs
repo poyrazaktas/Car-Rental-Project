@@ -21,7 +21,7 @@ namespace RecapDemo1
             ILoggerService fileLogger = new FileLoggerService();
             ILoggerService databaseLogger = new DatabaseLoggerService();
             IValidateService mernisValidateService = new MernisValidateService();
-            
+
             IEntityService playerManager = new PlayerManager(new List<ILoggerService> { databaseLogger,fileLogger},
                 new List<IValidateService> { mernisValidateService });
             Person enginHoca = new Player() { NationalityNumber = "00000000000", Name = "Engin", 
