@@ -1,0 +1,13 @@
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.csprojAssemblyReference.cache
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.AssemblyInfoInputs.cache
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.AssemblyInfo.cs
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.csproj.CoreCompileInputs.cache
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.exe
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.deps.json
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.runtimeconfig.json
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.runtimeconfig.dev.json
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.dll
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\bin\Debug\netcoreapp3.1\RecapDemo1.pdb
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.dll
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.pdb
+C:\Users\Poyraz\source\repos\YazilimGelistiriciKampi\RecapDemo1\obj\Debug\netcoreapp3.1\RecapDemo1.genruntimeconfig.cache
