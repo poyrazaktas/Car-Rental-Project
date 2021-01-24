@@ -34,8 +34,12 @@ Database dizininde verileri Database'e loglamanın simülasyonu yapılan Databas
 ### Business
 
 Bu katman  *Abstract* soyut kısım, *Concrete* somut kısım ve *ValidationRules* olmak üzere üç dizinden oluşmakta.
+
 Soyut kısımdaki *IEntitiyService* interface' i, somut kısımda bulunan *GameManager.cs* ve *PlayerManager.cs*' in referanslarını tutmak ve eş görevleri paylaştırmak üzere üretilmiştir.
+
 *PlayerManager.cs*' de bulunan ekleme metodunda *mernis validasyon* simülasyonu yapılmıştır. 
+
 İsterlerde bulunan kampanya indirimlerine *Sales* dizininde yer verilmiştir. 
+
 Ayrıca *Concrete* dizininde bulunan *Platforms* dizininde, çeşitli oyun dağıtım platformlarına yer verilmiştir.
 
