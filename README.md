@@ -4,6 +4,10 @@
 
 <h3>
 <ul>
+  <li> <a href="https://repl.it/@PoyrazAkta/ders1"> Ödev 1</a> </li>
+  <li> <a href="https://repl.it/@PoyrazAkta/ders2"> Ödev 2</a> </li>
+  <li> <a href="https://repl.it/@PoyrazAkta/ders3"> Ödev 3</a> </li>
+  <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
   <li> <a href="#kamp-ödev-6"> Ödev 6</a> </li>
 </ul>
