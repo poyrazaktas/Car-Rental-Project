@@ -1,6 +1,14 @@
 # YazilimGelistiriciKampi
 
-## Ödev 5: [RecapDemo1](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/RecapDemo1)
+<h2> Kamp Ödevleri </h2>
+
+<h3>
+<ul>
+  <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
+</ul>
+</h3>
+
+## [Kamp Ödev 5](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5)
 Bir oyun yazmak istiyorsunuz. Bu yazılım için backend kodlarını C# ile geliştirmeyi planlıyoruz. Yeni üye, satış ve kampanya yönetimi yapılması isteniyor. 
 Nesnelere ait özellikleri istediğiniz gibi verebilirsiniz. 
 
@@ -16,11 +24,11 @@ Nesnelere ait özellikleri istediğiniz gibi verebilirsiniz.
 
 ### Yazdığım kodda üç katman bulunuyor: 
 
-1. [Entities](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/RecapDemo1/Entities)
+1. [Entities](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5/Odev5/Entities)
 
-2. [Data Access](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/RecapDemo1/DataAccess)
+2. [Data Access](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5/Odev5/DataAccess)
 
-3. [Business](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/RecapDemo1/Business)
+3. [Business](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5/Odev5/Business)
 
 Her katmanda ise soyut işlemleri tanımlamak için *Abstract*, somut işlemleri tanımlamak için *Concrete* klasörü bulunmakta. 
 
