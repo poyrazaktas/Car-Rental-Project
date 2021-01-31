@@ -5,6 +5,7 @@
 <h3>
 <ul>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
+  <li> <a href="#kamp-ödev-6"> Ödev 6</a> </li>
 </ul>
 </h3>
 
@@ -52,3 +53,19 @@ Soyut kısımdaki *IEntitiyService* interface' i, somut kısımda bulunan *GameM
 
 Ayrıca *Concrete* dizininde bulunan *Platforms* dizininde, çeşitli oyun dağıtım platformlarına yer verilmiştir.
 
+## [Kamp Ödev 6](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6)
+Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.
+
+Entities, DataAccess, Business ve Console katmanlarını oluşturunuz.
+
+Bir araba nesnesi oluşturunuz. "Car". Özellik olarak : Id, BrandId, ColorId, ModelYear, DailyPrice, Description alanlarını ekleyiniz. (Brand = Marka)
+
+InMemory formatta GetById, GetAll, Add, Update, Delete oprasyonlarını yazınız. Consolda test ediniz.
+
+## Ödev 6 ile ilgili Notlar
+<h4>
+  <ul>
+    <li>ConsolUI' ı startup project olarak seçtiğinizden emin olunuz</li>
+    <li>Console' da GetAll, GetById ve Update operasyonları simüle edilmiştir. Dilerseniz Program.cs üzerinden diğer operasyonları da deneyebilirsiniz</li>
+  </ul>
+</h4>
