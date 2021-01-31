@@ -32,7 +32,7 @@ namespace RecapDemo1
                 LastName = "Aktaş", YearOfBirth = 2003 , Balance= 99999};
             Person mert = new Player() { NationalityNumber = "33333333333", Name = "Mert",
                 LastName = "Özcan", YearOfBirth = 2000 , Balance = 2200};
-
+            
             playerManager.Add(enginHoca);
             playerManager.Add(poyraz);
             playerManager.Add(ayaz);
