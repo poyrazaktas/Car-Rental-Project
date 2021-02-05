@@ -9,15 +9,17 @@
   <li> <a href="https://repl.it/@PoyrazAkta/ders3"> Ödev 3</a> </li>
   <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
-  <li> <a href="#kamp-ödev-6"> Ödev 6</a> </li>
+  <li> <a href="#kamp-ödev-araba-kiralama"> Ödev 6 ve Ödev 7</a> </li>
 </ul>
 </h3>
 
-## [Kamp Ödev 5](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5)
+
+# [Kamp Ödev 5](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5)
+
 Bir oyun yazmak istiyorsunuz. Bu yazılım için backend kodlarını C# ile geliştirmeyi planlıyoruz. Yeni üye, satış ve kampanya yönetimi yapılması isteniyor. 
 Nesnelere ait özellikleri istediğiniz gibi verebilirsiniz. 
 
-### Gereksinimler
+## Gereksinimler
 
 1. Oyuncuların sisteme kayıt olabileceği, bilgilerini güncelleyebileceği, kayıtlarını silebileceği bir ortamı simule ediniz. Müşteri bilgilerinin doğruluğunu e-devlet sistemlerini kullanarak doğrulama yapmak istiyoruz. (E-devlet sistemlerinde doğrulama TcNo, Ad, Soyad, DoğumYılı bilgileriyle yapılır. Bunu yapacak servisi simule etmeniz yeterlidir.)
 
@@ -57,8 +59,10 @@ Soyut kısımdaki *IEntitiyService* interface' i, somut kısımda bulunan *GameM
 
 Ayrıca *Concrete* dizininde bulunan *Platforms* dizininde, çeşitli oyun dağıtım platformlarına yer verilmiştir.
 
-## [Kamp Ödev 6](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6)
-Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.
+# [Kamp Ödev Araba Kiralama](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6)
+
+## Ödev 6
+Araba kiralama sistemi yazıyoruz.
 
 Entities, DataAccess, Business ve Console katmanlarını oluşturunuz.
 
@@ -66,10 +70,39 @@ Bir araba nesnesi oluşturunuz. "Car". Özellik olarak : Id, BrandId, ColorId, M
 
 InMemory formatta GetById, GetAll, Add, Update, Delete oprasyonlarını yazınız. Consolda test ediniz.
 
-## Ödev 6 ile ilgili Notlar
+## Ödev 7
+Araba Kiralama projemiz üzerinde çalışmaya devam edeceğiz.
+
+Car nesnesine ek olarak;
+
+1) Brand ve Color nesneleri ekleyiniz(Entity)
+
+Brand-->Id,Name
+
+Color-->Id,Name
+
+2) Sql Server tarafında yeni bir veritabanı kurunuz. Cars,Brands,Colors tablolarını oluşturunuz.
+
+3) Sisteme Generic IEntityRepository altyapısı yazınız.
+
+4) Car, Brand ve Color nesneleri için Entity Framework altyapısını yazınız.
+
+5) GetCarsByBrandId , GetCarsByColorId servislerini yazınız.
+
+6) Sisteme yeni araba eklendiğinde aşağıdaki kuralları çalıştırınız.
+
+Araba ismi minimum 2 karakter olmalıdır
+
+Araba günlük fiyatı 0'dan büyük olmalıdır.
+
+## Ödev 6 ve Ödev 7  ile ilgili Notlar
 <h4>
   <ul>
-    <li>ConsolUI' ı startup project olarak seçtiğinizden emin olunuz</li>
-    <li>Console' da GetAll, GetById ve Update operasyonları simüle edilmiştir. Dilerseniz Program.cs üzerinden diğer operasyonları da deneyebilirsiniz</li>
+    <li>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</li>
+    <li>6.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Abstract">Abstract</a> kısım <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/KampOdev6/DataAccess/Abstract/IEntityRepository.cs">Generic Repository Design Pattern</a> ile güncellendi.</li>
+    <li>6.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/InMemory">InMemoryCarDal</a> güncellendi. (LINQ kodları eklenmiştir.)</li>
+    <li>7.Hafta ödevine ilişkin <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/EntityFramework">EntityFramework</a> kodları yazıldı.</li>
+    <li>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</li>
+    <li>Console' da EntityFramework' e ait Add, GetAll ve GetAllByColorId simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/KampOdev6/ConsoleUI/Program.cs">Program.cs</a> üzerinden diğer operasyonları da deneyebilirsiniz.</li>
   </ul>
 </h4>
