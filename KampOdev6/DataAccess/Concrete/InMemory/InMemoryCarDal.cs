@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,12 @@ namespace DataAccess.Concrete.InMemory
         {
             var expression = filter.Compile();
             return filter == null ? _cars : _cars.Where(expression).ToList();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            Console.WriteLine("InMemory' de SQL işlemleri yapılamaz.");
+            return null;
         }
 
         public void Update(Car car)

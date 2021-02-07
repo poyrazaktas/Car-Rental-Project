@@ -9,7 +9,8 @@
   <li> <a href="https://repl.it/@PoyrazAkta/ders3"> Ödev 3</a> </li>
   <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
-  <li> <a href="#kamp-ödev-araba-kiralama"> Ödev 6 ve Ödev 7</a> </li>
+  <li> Ödev 6 SQL ile ilgiliydi. </li>
+  <li> <a href="#kamp-ödev-araba-kiralama"> Ödev 7 ve Ödev 8</a> </li>
 </ul>
 </h3>
 
@@ -61,7 +62,7 @@ Ayrıca *Concrete* dizininde bulunan *Platforms* dizininde, çeşitli oyun dağ�
 
 # [Kamp Ödev Araba Kiralama](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6)
 
-## Ödev 6
+## Ödev 7
 Araba kiralama sistemi yazıyoruz.
 
 Entities, DataAccess, Business ve Console katmanlarını oluşturunuz.
@@ -70,7 +71,7 @@ Bir araba nesnesi oluşturunuz. "Car". Özellik olarak : Id, BrandId, ColorId, M
 
 InMemory formatta GetById, GetAll, Add, Update, Delete oprasyonlarını yazınız. Consolda test ediniz.
 
-## Ödev 7
+## Ödev 8
 Araba Kiralama projemiz üzerinde çalışmaya devam edeceğiz.
 
 Car nesnesine ek olarak;
@@ -95,13 +96,13 @@ Araba ismi minimum 2 karakter olmalıdır
 
 Araba günlük fiyatı 0'dan büyük olmalıdır.
 
-## Ödev 6 ve Ödev 7  ile ilgili Notlar
+## Ödev 7 ve Ödev 8  ile ilgili Notlar
 <h4>
   <ul>
     <li>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</li>
-    <li>6.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Abstract">Abstract</a> kısım <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/KampOdev6/DataAccess/Abstract/IEntityRepository.cs">Generic Repository Design Pattern</a> ile güncellendi.</li>
-    <li>6.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/InMemory">InMemoryCarDal</a> güncellendi. (LINQ kodları eklenmiştir.)</li>
-    <li>7.Hafta ödevine ilişkin <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/EntityFramework">EntityFramework</a> kodları yazıldı.</li>
+    <li>7.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Abstract">Abstract</a> kısım <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/KampOdev6/DataAccess/Abstract/IEntityRepository.cs">Generic Repository Design Pattern</a> ile güncellendi.</li>
+    <li>7.Haftadaki DataAccess katmanında bulunan <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/InMemory">InMemoryCarDal</a> güncellendi. (LINQ kodları eklenmiştir.)</li>
+    <li>8.Hafta ödevine ilişkin <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev6/DataAccess/Concrete/EntityFramework">EntityFramework</a> kodları yazıldı.</li>
     <li>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</li>
     <li>Console' da EntityFramework' e ait Add, GetAll ve GetAllByColorId simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/KampOdev6/ConsoleUI/Program.cs">Program.cs</a> üzerinden diğer operasyonları da deneyebilirsiniz.</li>
   </ul>
