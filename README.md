@@ -10,7 +10,7 @@
   <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
   <li> Ödev 6 SQL ile ilgiliydi. </li>
-  <li> <a href="#araba-kiralama-projesi"> Ödev 7, 8, 9</a> </li>
+  <li> <a href="#araba-kiralama-projesi"> Ödev 7, 8, 9, 10</a> </li>
 </ul>
 </h3>
 
@@ -108,6 +108,14 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.
 
 5) Arabaları şu bilgiler olacak şekilde listeleyiniz. CarName, BrandName, ColorName, DailyPrice. (İpucu : IDto oluşturup 3 tabloya join yazınız)
 
+## Ödev 10 
+
+### Aşama 1
+
+1) Core katmanında Results yapılandırması yapınız.
+
+2) Daha önce geliştirdiğiniz tüm Business sınıflarını bu yapıya göre refactor (kodu iyileştirme) ediniz.
+
 ## Araba Kiralama Projesi ile ilgili Notlar
 <h4>
   <ul>
@@ -117,6 +125,7 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.
     <li>8.Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
     <li>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</li>
     <li>9.Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
+    <li>10.Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
     <li>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</li>
     <li>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </li>
   </ul>
