@@ -7,13 +7,11 @@ namespace Business.Constants
     public static class Messages
     {
         public static string CarAdded = "Araba başarıyla eklendi.";
-
         public static string CarUpdated = "Araba başarıyla güncellendi.";
         public static string CarDeleted = "Araba başarıyla silindi.";
         public static string CarsListed = "Arabalar başarıyla listelendi.";
 
         public static string ErrorAddCar = "Araba eklenemedi.";
-
         public static string ErrorUpdateCar = "Araba güncellenemedi.";
         public static string ErrorDeleteCar = "Araba silinemedi.";
         public static string ErrorListCars = "Arabalar listelenemedi.";
@@ -25,7 +23,22 @@ namespace Business.Constants
 
         public static string ColorAdded = "Renk başarıyla eklendi.";
         public static string ColorUpdated = "Renk başarıyla güncellendi.";
-        public static string ColorDeleted = "Renkbaşarıyla silindi.";
+        public static string ColorDeleted = "Renk başarıyla silindi.";
         public static string ColorsListed = "Renkler başarıyla listelendi.";
+
+        public static string UserAdded = "Kullanıcı başarıyla eklendi.";
+        public static string UserUpdated = "Kullanıcı başarıyla güncellendi.";
+        public static string UserDeleted = "Kullanıcı başarıyla silindi.";
+        public static string UsersListed = "Kullanıcılar başarıyla listelendi.";
+
+        public static string CustomerAdded = "Müşteri başarıyla eklendi.";
+        public static string CustomerUpdated = "Müşteri başarıyla güncellendi.";
+        public static string CustomerDeleted = "Müşteri başarıyla silindi.";
+        public static string CustomersListed = "Müşteriler başarıyla listelendi.";
+
+        public static string RentalAdded = "Kiralama başarıyla eklendi.";
+        public static string RentalUpdated = "Kiralama başarıyla güncellendi.";
+        public static string RentalDeleted = "Kiralama başarıyla silindi.";
+        public static string RentalsListed = "Kiralamalar başarıyla listelendi.";
     }
 }

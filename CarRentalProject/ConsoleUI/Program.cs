@@ -17,9 +17,42 @@ namespace ConsoleUI
             //EfColorTest();
 
             //CarDetailTest();
-            CarAddToDbTest();
-            CarUpdateTest();
-            CarDeleteTest();
+
+            //CarAddToDbTest();
+            //CarUpdateTest();
+            //CarDeleteTest();
+
+            //RentalDetailTest();
+            RentalAddToDbTest();
+            RentalDetailTest();
+        }
+
+        private static void RentalAddToDbTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rental
+            {
+                CarId = 4,
+                CustomerId = 2,
+                RentDate = DateTime.Today,
+                ReturnDate = DateTime.Today.AddDays(3),
+            });
+            Console.WriteLine(result.Message);
+        }
+
+        private static void RentalDetailTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.GetRentalDetails();
+            Console.WriteLine("İsim Soyisim\tMarka\t\tGünlük Kira\tKiralama Tarihi\t\tİade Tarihi\n");
+            foreach (var rentalDetail in result.Data)
+            {
+                Console.WriteLine(rentalDetail.CustomerFirstName + " " +
+                    rentalDetail.CustomerLastName + "\t" + rentalDetail.BrandName + "\t\t"
+                    + rentalDetail.CarDailyPrice.ToString() + "\t\t" + rentalDetail.RentDate.ToString()
+                    + "\t" + rentalDetail.ReturnDate.ToString());
+            }
+            Console.WriteLine(result.Message);
         }
 
         private static void CarDeleteTest()
