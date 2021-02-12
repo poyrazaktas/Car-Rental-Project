@@ -65,56 +65,78 @@ Ayrıca *Concrete* dizininde bulunan *Platforms* dizininde, çeşitli oyun dağ�
 ## Ödev 7
 Araba kiralama sistemi yazıyoruz.
 
-Entities, DataAccess, Business ve Console katmanlarını oluşturunuz.
+Entities, DataAccess, Business ve Console katmanlarını oluşturunuz.✓
 
-Bir araba nesnesi oluşturunuz. "Car". Özellik olarak : Id, BrandId, ColorId, ModelYear, DailyPrice, Description alanlarını ekleyiniz. (Brand = Marka)
+Bir araba nesnesi oluşturunuz. "Car". Özellik olarak : Id, BrandId, ColorId, ModelYear, DailyPrice, Description alanlarını ekleyiniz. (Brand = Marka)✓
 
-InMemory formatta GetById, GetAll, Add, Update, Delete oprasyonlarını yazınız. Consolda test ediniz.
+InMemory formatta GetById, GetAll, Add, Update, Delete oprasyonlarını yazınız. Consolda test ediniz.✓
 
 ## Ödev 8
 Araba Kiralama projemiz üzerinde çalışmaya devam edeceğiz.
 
 Car nesnesine ek olarak;
 
-1) Brand ve Color nesneleri ekleyiniz(Entity)
+1) Brand ve Color nesneleri ekleyiniz(Entity)✓
 
 Brand-->Id,Name
 
 Color-->Id,Name
 
-2) Sql Server tarafında yeni bir veritabanı kurunuz. Cars,Brands,Colors tablolarını oluşturunuz.
+2) Sql Server tarafında yeni bir veritabanı kurunuz. Cars,Brands,Colors tablolarını oluşturunuz.✓
 
-3) Sisteme Generic IEntityRepository altyapısı yazınız.
+3) Sisteme Generic IEntityRepository altyapısı yazınız.✓
 
-4) Car, Brand ve Color nesneleri için Entity Framework altyapısını yazınız.
+4) Car, Brand ve Color nesneleri için Entity Framework altyapısını yazınız.✓
 
-5) GetCarsByBrandId , GetCarsByColorId servislerini yazınız.
+5) GetCarsByBrandId , GetCarsByColorId servislerini yazınız.✓
 
-6) Sisteme yeni araba eklendiğinde aşağıdaki kuralları çalıştırınız.
+6) Sisteme yeni araba eklendiğinde aşağıdaki kuralları çalıştırınız.✓
 
-Araba ismi minimum 2 karakter olmalıdır
+Araba ismi minimum 2 karakter olmalıdır✓
 
-Araba günlük fiyatı 0'dan büyük olmalıdır.
+Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 
 ## Ödev 9
 
-1) CarRental Projenizde Core katmanı oluşturunuz.
+1) CarRental Projenizde Core katmanı oluşturunuz.✓
 
-2) IEntity, IDto, IEntityRepository, EfEntityRepositoryBase dosyalarınızı 9. gün dersindeki gibi oluşturup ekleyiniz.
+2) IEntity, IDto, IEntityRepository, EfEntityRepositoryBase dosyalarınızı 9. gün dersindeki gibi oluşturup ekleyiniz.✓
 
-3) Car, Brand, Color sınıflarınız için tüm CRUD operasyonlarını hazır hale getiriniz.
+3) Car, Brand, Color sınıflarınız için tüm CRUD operasyonlarını hazır hale getiriniz.✓
 
-4) Console'da Tüm CRUD operasyonlarınızı Car, Brand, Model nesneleriniz için test ediniz. GetAll, GetById, Insert, Update, Delete.
+4) Console'da Tüm CRUD operasyonlarınızı Car, Brand, Model nesneleriniz için test ediniz. GetAll, GetById, Insert, Update, Delete.✓
 
-5) Arabaları şu bilgiler olacak şekilde listeleyiniz. CarName, BrandName, ColorName, DailyPrice. (İpucu : IDto oluşturup 3 tabloya join yazınız)
+5) Arabaları şu bilgiler olacak şekilde listeleyiniz. CarName, BrandName, ColorName, DailyPrice. (İpucu : IDto oluşturup 3 tabloya join yazınız)✓
 
 ## Ödev 10 
 
 ### Aşama 1
 
-1) Core katmanında Results yapılandırması yapınız.
+1) Core katmanında Results yapılandırması yapınız.✓
 
-2) Daha önce geliştirdiğiniz tüm Business sınıflarını bu yapıya göre refactor (kodu iyileştirme) ediniz.
+2) Daha önce geliştirdiğiniz tüm Business sınıflarını bu yapıya göre refactor (kodu iyileştirme) ediniz.✓
+
+### Aşama 2
+
+1) Kullanıcılar tablosu oluşturunuz. Users-->Id,FirstName,LastName,Email,Password✓
+
+2) Müşteriler tablosu oluşturunuz. Customers-->UserId,CompanyName✓
+
+3) Kullanıcılar ve müşteriler ilişkilidir.✓
+
+4)Arabanın kiralanma bilgisini tutan tablo oluşturunuz. Rentals-->Id, CarId, CustomerId, RentDate(Kiralama Tarihi), ReturnDate(Teslim Tarihi). ✓
+
+5) Araba teslim edilmemişse ReturnDate null'dır.✓
+
+6) Projenizde bu entity'leri oluşturunuz.✓
+
+7) CRUD operasyonlarını yazınız.✓
+
+8) Yeni müşteriler ekleyiniz.✓
+
+9) Arabayı kiralama imkanını kodlayınız. Rental-->Add✓
+
+10) Arabanın kiralanabilmesi için arabanın teslim edilmesi gerekmektedir. --- In Progress
 
 ## Araba Kiralama Projesi ile ilgili Notlar
 <h4>
@@ -126,6 +148,7 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.
     <li>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</li>
     <li>9.Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
     <li>10.Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
+    <li>10.Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi.</li>
     <li>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</li>
     <li>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </li>
   </ul>
