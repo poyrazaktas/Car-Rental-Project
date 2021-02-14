@@ -42,5 +42,8 @@ namespace Business.Constants
         public static string RentalsListed = "Kiralamalar başarıyla listelendi.";
 
         public static string ErrorAddRental = "Kiralama eklenemedi. İstenilen araba henüz teslim edilmedi.";
+        public static string ErrorUpdateRental = "Kiralama güncellenemedi.";
+        public static string ErrorDeleteRental = "Kiralama silinemedi.";
+        public static string ErrorListRentals = "Kiralama listelenemedi.";
     }
 }
