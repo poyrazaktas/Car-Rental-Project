@@ -136,7 +136,7 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 
 9) Arabayı kiralama imkanını kodlayınız. Rental-->Add✓
 
-10) Arabanın kiralanabilmesi için arabanın teslim edilmesi gerekmektedir. --- In Progress
+10) Arabanın kiralanabilmesi için arabanın teslim edilmesi gerekmektedir.✓
 
 ## Araba Kiralama Projesi ile ilgili Notlar
 <h4>
@@ -148,7 +148,7 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
     <li>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</li>
     <li>9.Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
     <li>10.Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
-    <li>10.Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi.</li>
+    <li>10.Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
     <li>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</li>
     <li>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </li>
   </ul>

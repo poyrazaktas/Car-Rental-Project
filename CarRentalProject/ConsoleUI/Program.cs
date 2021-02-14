@@ -33,9 +33,9 @@ namespace ConsoleUI
             var result = rentalManager.Add(new Rental
             {
                 CarId = 4,
-                CustomerId = 2,
+                CustomerId = 3,
                 RentDate = DateTime.Today,
-                ReturnDate = DateTime.Today.AddDays(3),
+                ReturnDate = null,
             });
             Console.WriteLine(result.Message);
         }
