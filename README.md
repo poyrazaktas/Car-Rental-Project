@@ -93,6 +93,7 @@ Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağ�
             "returnDate": "2021-02-19T00:00:00"
         }
         </pre>
+        Hatırlatma: localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
         </li>
       </ul>
     </li>
