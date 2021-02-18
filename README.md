@@ -10,7 +10,7 @@
   <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
   <li> Ödev 6 SQL ile ilgiliydi. </li>
-  <li> <a href="#araba-kiralama-projesi"> Ödev 7, 8, 9, 10, 11</a> </li>
+  <li> <a href="#araba-kiralama-projesi"> Ödev 7, 8, 9, 10, 11, 12</a> </li>
 </ul>
 </h3>
 
@@ -77,7 +77,10 @@ Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağ�
     <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
     <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
     <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
-    <li> Postman de yapılan bazı istekler
+    <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
+    <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
+    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı. Buradaki EntityFramework' e olan bağımlılığı yakın zamanda gidereceğim.</li>
+    <li> Postman de yapılan bazı istekler:
       <ul>
         <li>GET: https://localhost:44324/api/rentals/details </li>
         <li>GET: https://localhost:44324/api/users/all </li>
@@ -93,7 +96,7 @@ Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağ�
             "returnDate": "2021-02-19T00:00:00"
         }
         </pre>
-        Hatırlatma: localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
+        <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
         </li>
       </ul>
     </li>
@@ -188,4 +191,10 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 
 3. Postman'de test ediniz.✓
 
+## Ödev 12
 
+1. Car Rental Projenize Autofac desteği ekleyiniz.✓
+
+2. Car Rental Projenize FluentValidation desteği ekleyiniz.✓
+
+3. Car Rental Projenize AOP desteği ekleyiniz. ValidationAspect ekleyiniz.✓
