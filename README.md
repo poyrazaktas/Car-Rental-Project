@@ -64,15 +64,25 @@ Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağ�
 # [Araba Kiralama Projesi](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/CarRentalProject)
 
 ## Araba Kiralama Projesi ile ilgili Notlar
-
 <h4>
   <ul>
+    <li>Projede kullandığım veritabanını oluşturmak için adımlar:
+    <ol>
+      <li>Sol üstte bulunan View Menüsününden, SQL Server Object Explorer' i seçiniz. Ya da Türkçe Q Klavye kullanıyorsanız CTRL + ç, CTRL+ S ile açabilirsiniz.</li>
+      <li>Açılan menüde SQL Server>(localdb)>Databases dizinini açınız.</li>
+      <li>Databases' e sağ tıklayarak Add New Database' i seçiniz.</li>
+      <li>Veritabanına istediğiniz ismi verebilirsiniz. Ben CarRental ismini tercih ediyorum.</li>
+      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
+      <li>Sorguyu sol üsteki run tuşundan veya CTRL + SHIFT + E tuş takımı ile çalıştırınız.</li>
+      <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
+    </ol>
+    </li>
     <li> <del>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</del> </li>
     <li>11. Hafta Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
     <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
     <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
     <li>8. Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
-    <li>Sql Server' da oluşturulan veritabanı <del><a href="https://hizliresim.com/hL9kKp">bu</a></del> şekildedir.</li>
+    <li><del>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</del></li>
     <li>9. Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
     <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
     <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
