@@ -72,7 +72,7 @@ Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağ�
       <li>Açılan menüde SQL Server>(localdb)>Databases dizinini açınız.</li>
       <li>Databases' e sağ tıklayarak Add New Database' i seçiniz.</li>
       <li>Veritabanına istediğiniz ismi verebilirsiniz. Ben CarRental ismini tercih ediyorum.</li>
-      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
+      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalQuery.txt">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
       <li>Sorguyu sol üsteki run tuşundan veya CTRL + SHIFT + E tuş takımı ile çalıştırınız.</li>
       <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
     </ol>
