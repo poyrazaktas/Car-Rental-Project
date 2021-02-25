@@ -1,40 +1,40 @@
 CREATE TABLE [dbo].[Brands] (
-    [Id]   INT  IDENTITY (1, 1) NOT NULL,
-    [Name] TEXT NOT NULL,
+    [Id]   INT           IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (50) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 CREATE TABLE [dbo].[Colors] (
-    [Id]   INT  IDENTITY (1, 1) NOT NULL,
-    [Name] TEXT NOT NULL,
+    [Id]   INT           IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (25) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 CREATE TABLE [dbo].[Cars] (
-    [Id]          INT  IDENTITY (1, 1) NOT NULL,
-    [BrandId]     INT  NOT NULL,
-    [ColorId]     INT  NULL,
-    [ModelYear]   INT  NULL,
-    [DailyPrice]  INT  DEFAULT ((0)) NOT NULL,
-    [Description] TEXT NULL,
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [BrandId]     INT           NOT NULL,
+    [ColorId]     INT           NULL,
+    [ModelYear]   INT           NULL,
+    [DailyPrice]  INT           DEFAULT ((0)) NOT NULL,
+    [Description] VARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [fk_color] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Colors] ([Id]),
-    CONSTRAINT [fk_brand] FOREIGN KEY ([BrandId]) REFERENCES [dbo].[Brands] ([Id])
+    CONSTRAINT [fk_brand] FOREIGN KEY ([BrandId]) REFERENCES [dbo].[Brands] ([Id]),
+    CONSTRAINT [fk_color] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Colors] ([Id])
 );
 
 CREATE TABLE [dbo].[Users] (
-    [Id]        INT  IDENTITY (1, 1) NOT NULL,
-    [FirstName] TEXT NOT NULL,
-    [LastName]  TEXT NOT NULL,
-    [Email]     TEXT NULL,
-    [Password]  TEXT NULL,
+    [Id]        INT           IDENTITY (1, 1) NOT NULL,
+    [FirstName] NVARCHAR (25) NOT NULL,
+    [LastName]  NVARCHAR (25) NOT NULL,
+    [Email]     NVARCHAR (50) NULL,
+    [Password]  NVARCHAR (30) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 CREATE TABLE [dbo].[Customers] (
-    [Id]          INT  IDENTITY (1, 1) NOT NULL,
-    [UserId]      INT  NOT NULL,
-    [CompanyName] TEXT NULL,
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [UserId]      INT           NOT NULL,
+    [CompanyName] NVARCHAR (50) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [fk_user] FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users] ([Id])
 );
@@ -46,9 +46,10 @@ CREATE TABLE [dbo].[Rentals] (
     [RentDate]   DATETIME NOT NULL,
     [ReturnDate] DATETIME NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [fk_cars] FOREIGN KEY ([CarId]) REFERENCES [dbo].[Cars] ([Id]),
-    CONSTRAINT [fk_customers] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customers] ([Id])
+    CONSTRAINT [fk_customers] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customers] ([Id]),
+    CONSTRAINT [fk_cars] FOREIGN KEY ([CarId]) REFERENCES [dbo].[Cars] ([Id])
 );
+
 
 SET IDENTITY_INSERT [dbo].[Brands] ON
 INSERT INTO [dbo].[Brands] ([Id], [Name]) VALUES (1, N'Renault')

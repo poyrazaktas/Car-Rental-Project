@@ -1,10 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Utils.Business;
 using Core.Utils.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -20,6 +22,11 @@ namespace Business.Concrete
 
         public IResult Add(Color color)
         {
+            var result = Rules.Run(CheckIfColorExists(color.Name));
+            if (result != null)
+            {
+                return new ErrorResult(result.Message);
+            }
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
         }
@@ -39,6 +46,16 @@ namespace Business.Concrete
         public IDataResult<List<Color>> GetAll()
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
+        }
+
+        private IResult CheckIfColorExists(string colorName)
+        {
+            var result = _colorDal.GetAll(c => c.Name == colorName);
+            if (result == null)
+            {
+                return new ErrorResult(Messages.ErrorColorExists);
+            }
+            return new SuccessResult();
         }
     }
 }

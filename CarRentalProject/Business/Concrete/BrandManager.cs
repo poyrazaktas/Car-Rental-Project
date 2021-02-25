@@ -1,10 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Utils.Business;
 using Core.Utils.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -20,6 +22,11 @@ namespace Business.Concrete
 
         public IResult Add(Brand brand)
         {
+            var result = Rules.Run(CheckIfBrandExists(brand.Name));
+            if (result != null)
+            {
+                return new ErrorResult(result.Message);
+            }
             _brandDal.Add(brand);
             return new SuccessResult(Messages.BrandAdded);
         }
@@ -39,6 +46,16 @@ namespace Business.Concrete
         public IDataResult<List<Brand>> GetAll()
         {
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandsListed);
+        }
+
+        private IResult CheckIfBrandExists(string brandName)
+        {
+            var result = _brandDal.GetAll(b => b.Name == brandName).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.ErrorBrandExists);
+            }
+            return new SuccessResult();
         }
     }
 }

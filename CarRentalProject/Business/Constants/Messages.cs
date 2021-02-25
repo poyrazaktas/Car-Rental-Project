@@ -45,5 +45,8 @@ namespace Business.Constants
         public static string ErrorUpdateRental = "Kiralama güncellenemedi.";
         public static string ErrorDeleteRental = "Kiralama silinemedi.";
         public static string ErrorListRentals = "Kiralama listelenemedi.";
+
+        public static string ErrorBrandExists = "Sistemde aynı marka var.";
+        public static string ErrorColorExists = "Sistemde aynı renk var.";
     }
 }
