@@ -48,5 +48,11 @@ namespace Business.Constants
 
         public static string ErrorBrandExists = "Sistemde aynı marka var.";
         public static string ErrorColorExists = "Sistemde aynı renk var.";
+
+        public static string CarImageAdded = "Araba fotoğrafı başarıyla eklendi.";
+        public static string CarImageUpdated = "Araba fotoğrafı başarıyla güncellendi.";
+        public static string CarImageDeleted = "Araba fotoğrafı başarıyla silindi.";
+        public static string CarImagesListed = "Araba fotoğrafları başarıyla listelendi.";
+        public static string ErrorAddCarImage = "Arabanın hali hazırda çok fazla fotoğrafı var.";
     }
 }

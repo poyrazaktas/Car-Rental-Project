@@ -28,7 +28,7 @@ namespace Business.Concrete
             var result = Rules.Run(CheckIfCarReturned(rental.CarId));
             if (result != null)
             {
-                new ErrorResult(result.Message);
+                return new ErrorResult(result.Message);
             }
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);

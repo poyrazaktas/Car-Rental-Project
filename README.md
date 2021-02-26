@@ -208,3 +208,17 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 2. Car Rental Projenize FluentValidation desteği ekleyiniz.✓
 
 3. Car Rental Projenize AOP desteği ekleyiniz. ValidationAspect ekleyiniz.✓
+
+## Ödev 13
+
+RentACar projenizde;
+<ul>
+  <li>CarImages (Araba Resimleri) tablosu oluşturunuz. (Id,CarId,ImagePath,Date) Bir arabanın birden fazla resmi olabilir.✓</li>
+  <li>Api üzerinden arabaya resim ekleyecek sistemi yazınız.</li>
+  <li>Resimler projeniz içerisinde bir klasörde tutulacaktır. Resimler yüklendiği isimle değil, kendi vereceğiniz GUID ile dosyalanacaktır.</li>
+  <li>Resim silme, güncelleme yetenekleri ekleyiniz.✓</li>
+  <li>Bir arabanın en fazla 5 resmi olabilir.✓</li>
+  <li>Resmin eklendiği tarih sistem tarafından atanacaktır.✓</li>
+  <li>Bir arabaya ait resimleri listeleme imkanı oluşturunuz. (Liste)</li>
+  <li>Eğer bir arabaya ait resim yoksa, default bir resim gösteriniz. Bu resim şirket logonuz olabilir. (Tek elemanlı liste)</li>
+</ul>
