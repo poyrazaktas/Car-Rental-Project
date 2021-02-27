@@ -50,6 +50,14 @@ CREATE TABLE [dbo].[Rentals] (
     CONSTRAINT [fk_cars] FOREIGN KEY ([CarId]) REFERENCES [dbo].[Cars] ([Id])
 );
 
+CREATE TABLE [dbo].[CarImages] (
+    [Id]        INT            IDENTITY (1, 1) NOT NULL,
+    [CarId]     INT            NOT NULL,
+    [ImagePath] NVARCHAR (MAX) NULL,
+    [Date]      DATETIME       NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [fk_car_id] FOREIGN KEY ([CarId]) REFERENCES [dbo].[Cars] ([Id])
+);
 
 SET IDENTITY_INSERT [dbo].[Brands] ON
 INSERT INTO [dbo].[Brands] ([Id], [Name]) VALUES (1, N'Renault')

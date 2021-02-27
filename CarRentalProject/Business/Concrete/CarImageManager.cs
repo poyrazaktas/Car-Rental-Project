@@ -6,6 +6,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -38,13 +39,24 @@ namespace Business.Concrete
 
         public IResult Delete(CarImage carImage)
         {
+            var result = Rules.Run(CheckIfDataExists());
+            if (result != null)
+            {
+                return new ErrorResult(result.Message);
+            }
             _carImageDal.Delete(carImage);
             return new SuccessResult(Messages.CarImageDeleted);
         }
 
-        public IDataResult<List<CarImage>> GetAll()
+        public IDataResult<List<CarImage>> GetAllByCarId(int carId)
         {
-            return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(), Messages.CarImagesListed);
+            var result = Rules.Run(CheckIfCarImageExists(carId));
+            if (result != null)
+            {
+                return new ErrorDataResult<List<CarImage>>(new List<CarImage> {
+                    new CarImage {Id=404, CarId = carId, Date = DateTime.Now, ImagePath = Paths.DefaultCarImage}}, result.Message);
+            }
+            return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(image => image.CarId == carId), Messages.CarImagesListed);
         }
 
         private IResult CheckIfCarImagesExceed(int carId)
@@ -53,6 +65,26 @@ namespace Business.Concrete
             if (result >= 5)
             {
                 return new ErrorResult(Messages.ErrorAddCarImage);
+            }
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfCarImageExists(int carId)
+        {
+            var result = _carImageDal.GetAll(image => image.CarId == carId).Any();
+            if (!result)
+            {
+                return new ErrorResult(Messages.ErrorNoCarImage);
+            }
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfDataExists()
+        {
+            var result = _carImageDal.GetAll().Any();
+            if (!result)
+            {
+                return new ErrorResult(Messages.ErrorNoSuchData);
             }
             return new SuccessResult();
         }

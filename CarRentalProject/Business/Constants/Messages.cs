@@ -54,5 +54,8 @@ namespace Business.Constants
         public static string CarImageDeleted = "Araba fotoğrafı başarıyla silindi.";
         public static string CarImagesListed = "Araba fotoğrafları başarıyla listelendi.";
         public static string ErrorAddCarImage = "Arabanın hali hazırda çok fazla fotoğrafı var.";
+        public static string ErrorNoCarImage = "Arabanın herhangi bir fotoğrafı yok.";
+
+        public static string ErrorNoSuchData = "Silinecek veri kalmadı.";
     }
 }

@@ -10,9 +10,89 @@
   <li> <a href="https://repl.it/@PoyrazAkta/ders4"> Ödev 4</a> </li>
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
   <li> Ödev 6 SQL ile ilgiliydi. </li>
-  <li> <a href="#araba-kiralama-projesi"> Ödev 7, 8, 9, 10, 11, 12</a> </li>
+  <li> <a href="#araba-kiralama-projesi"> Araba Kiralama Projesi</a> </li>
 </ul>
 </h3>
+
+# [Araba Kiralama Projesi](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/CarRentalProject)
+
+## Araba Kiralama Projesi ile ilgili Notlar
+
+<h4>
+  <ul>
+    <li>Projede kullandığım veritabanını oluşturmak için adımlar:
+    <ol>
+      <li>Sol üstte bulunan View Menüsününden, SQL Server Object Explorer' i seçiniz. Ya da Türkçe Q Klavye kullanıyorsanız CTRL + ç, CTRL+ S ile açabilirsiniz.</li>
+      <li>Açılan menüde SQL Server>(localdb)>Databases dizinini açınız.</li>
+      <li>Databases' e sağ tıklayarak Add New Database' i seçiniz.</li>
+      <li>Veritabanına istediğiniz ismi verebilirsiniz. Ben CarRental ismini tercih ediyorum.</li>
+      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalQuery.txt">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
+      <li>Sorguyu sol üsteki run tuşundan veya CTRL + SHIFT + E tuş takımı ile çalıştırınız.</li>
+      <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
+    </ol>
+    </li>
+    <li> <del>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</del> </li>
+    <li>11. Hafta Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
+    <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
+    <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
+    <li>8. Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
+    <li><del>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</del></li>
+    <li>9. Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
+    <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
+    <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
+    <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
+    <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
+    <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
+    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/CarImageManager.cs">CarImageManager</a> sınıfına taşınmıştır. </li>
+    <li>13. Hafta ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
+    <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır.Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
+    <li> Postman de yapılan bazı istekler:
+      <h2><b>Eski İstekler</b> 11.Hafta Ödevi</h2>
+      <ul>
+        <li>GET: https://localhost:44324/api/rentals/details </li>
+        <li>GET: https://localhost:44324/api/users/all </li>
+        <li>GET: https://localhost:44324/api/cars/brand?id=3</li>
+        <li>GET: https://localhost:44324/api/cars/color?id=7</li>
+        <li>POST: https://localhost:44324/api/rentals<br> 
+        BODY(raw -JSON): 
+        <pre> 
+        {
+            "carId": 4,
+            "customerId": 1,
+            "rentDate": "2021-02-14T00:00:00",
+            "returnDate": "2021-02-19T00:00:00"
+        }
+        </pre>
+        <h2><b>Yeni İstekler</b> 13.Hafta Ödevi</h2>
+        <ul>
+          <li>GET: https://localhost:44324/api/carimages/photos?id=1</li>
+          <li>POST: https://localhost:44324/api/carimages/add<br> 
+        <h3><b>form-data:</b></h3> 
+        <table style="width:100%">
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Type</th>
+          </tr>
+          <tr>
+            <td>carId</td>
+            <td>1</td>
+            <td>Text</td>
+          </tr>
+          <tr>
+            <td>File</td>
+            <td>toyota_corolla.jpg</td>
+            <td>File</td>
+          </tr>
+        </table>
+        <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
+        </li>
+      </ul>
+    </li>
+    <li><del>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</del></li>
+    <li><del>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </del></li>
+  </ul>
+</h4>
 
 # [Kamp Ödev 5](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5)
 
@@ -61,59 +141,7 @@ _PlayerManager.cs_' de bulunan ekleme metodunda _mernis validasyon_ simülasyonu
 
 Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağıtım platformlarına yer verilmiştir.
 
-# [Araba Kiralama Projesi](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/CarRentalProject)
 
-## Araba Kiralama Projesi ile ilgili Notlar
-<h4>
-  <ul>
-    <li>Projede kullandığım veritabanını oluşturmak için adımlar:
-    <ol>
-      <li>Sol üstte bulunan View Menüsününden, SQL Server Object Explorer' i seçiniz. Ya da Türkçe Q Klavye kullanıyorsanız CTRL + ç, CTRL+ S ile açabilirsiniz.</li>
-      <li>Açılan menüde SQL Server>(localdb)>Databases dizinini açınız.</li>
-      <li>Databases' e sağ tıklayarak Add New Database' i seçiniz.</li>
-      <li>Veritabanına istediğiniz ismi verebilirsiniz. Ben CarRental ismini tercih ediyorum.</li>
-      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalQuery.txt">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
-      <li>Sorguyu sol üsteki run tuşundan veya CTRL + SHIFT + E tuş takımı ile çalıştırınız.</li>
-      <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
-    </ol>
-    </li>
-    <li> <del>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</del> </li>
-    <li>11. Hafta Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
-    <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
-    <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
-    <li>8. Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
-    <li><del>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</del></li>
-    <li>9. Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
-    <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
-    <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
-    <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
-    <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
-    <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
-    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı. Buradaki EntityFramework' e olan bağımlılığı yakın zamanda gidereceğim.</li>
-    <li> Postman de yapılan bazı istekler:
-      <ul>
-        <li>GET: https://localhost:44324/api/rentals/details </li>
-        <li>GET: https://localhost:44324/api/users/all </li>
-        <li>GET: https://localhost:44324/api/cars/brand?id=3</li>
-        <li>GET: https://localhost:44324/api/cars/color?id=7</li>
-        <li>POST: https://localhost:44324/api/rentals<br> 
-        BODY(raw -JSON): 
-        <pre> 
-        {
-            "carId": 4,
-            "customerId": 1,
-            "rentDate": "2021-02-14T00:00:00",
-            "returnDate": "2021-02-19T00:00:00"
-        }
-        </pre>
-        <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
-        </li>
-      </ul>
-    </li>
-    <li>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</li>
-    <li>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </li>
-  </ul>
-</h4>
 
 ## Ödev 7
 
@@ -212,13 +240,14 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 ## Ödev 13
 
 RentACar projenizde;
+
 <ul>
   <li>CarImages (Araba Resimleri) tablosu oluşturunuz. (Id,CarId,ImagePath,Date) Bir arabanın birden fazla resmi olabilir.✓</li>
-  <li>Api üzerinden arabaya resim ekleyecek sistemi yazınız.</li>
-  <li>Resimler projeniz içerisinde bir klasörde tutulacaktır. Resimler yüklendiği isimle değil, kendi vereceğiniz GUID ile dosyalanacaktır.</li>
+  <li>Api üzerinden arabaya resim ekleyecek sistemi yazınız.✓</li>
+  <li>Resimler projeniz içerisinde bir klasörde tutulacaktır. Resimler yüklendiği isimle değil, kendi vereceğiniz GUID ile dosyalanacaktır.✓</li>
   <li>Resim silme, güncelleme yetenekleri ekleyiniz.✓</li>
   <li>Bir arabanın en fazla 5 resmi olabilir.✓</li>
   <li>Resmin eklendiği tarih sistem tarafından atanacaktır.✓</li>
-  <li>Bir arabaya ait resimleri listeleme imkanı oluşturunuz. (Liste)</li>
-  <li>Eğer bir arabaya ait resim yoksa, default bir resim gösteriniz. Bu resim şirket logonuz olabilir. (Tek elemanlı liste)</li>
+  <li>Bir arabaya ait resimleri listeleme imkanı oluşturunuz.✓</li>
+  <li>Eğer bir arabaya ait resim yoksa, default bir resim gösteriniz. Bu resim şirket logonuz olabilir.✓</li>
 </ul>
