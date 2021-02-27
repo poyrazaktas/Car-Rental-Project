@@ -43,9 +43,10 @@
     <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
     <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
     <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
-    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/CarImageManager.cs">CarImageManager</a> sınıfına taşınmıştır. </li>
+    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/RentalManager.cs">RentalManager</a> sınıfına taşınmıştır. </li>
     <li>13. Hafta ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
-    <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır.Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
+    <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. </li>
+    <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
     <li> Postman de yapılan bazı istekler:
       <h2><b>Eski İstekler</b> 11.Hafta Ödevi</h2>
       <ul>
