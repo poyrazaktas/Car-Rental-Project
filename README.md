@@ -47,6 +47,7 @@
     <li>13. Hafta ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
     <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. </li>
     <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
+    <li>14. Hafta ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u için metot seçilmedi.</li>
     <li> Postman de yapılan bazı istekler:
       <h2><b>Eski İstekler</b> 11.Hafta Ödevi</h2>
       <ul>
@@ -252,3 +253,7 @@ RentACar projenizde;
   <li>Bir arabaya ait resimleri listeleme imkanı oluşturunuz.✓</li>
   <li>Eğer bir arabaya ait resim yoksa, default bir resim gösteriniz. Bu resim şirket logonuz olabilir.✓</li>
 </ul>
+
+## Ödev 14
+
+1. RentACar projenize JWT entegrasyonu yapınız.✓
