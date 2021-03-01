@@ -23,11 +23,14 @@ CREATE TABLE [dbo].[Cars] (
 );
 
 CREATE TABLE [dbo].[Users] (
-    [Id]        INT           IDENTITY (1, 1) NOT NULL,
-    [FirstName] NVARCHAR (25) NOT NULL,
-    [LastName]  NVARCHAR (25) NOT NULL,
-    [Email]     NVARCHAR (50) NULL,
-    [Password]  NVARCHAR (30) NULL,
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [FirstName]    VARCHAR (100) NOT NULL,
+    [LastName]     VARCHAR (100) NOT NULL,
+    [Email]        VARCHAR (250) NULL,
+    [Password]     VARCHAR (50)  NULL,
+    [PasswordHash] BINARY (500)  NULL,
+    [PasswordSalt] BINARY (500)  NULL,
+    [Status]       BIT           NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
@@ -57,6 +60,19 @@ CREATE TABLE [dbo].[CarImages] (
     [Date]      DATETIME       NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [fk_car_id] FOREIGN KEY ([CarId]) REFERENCES [dbo].[Cars] ([Id])
+);
+
+CREATE TABLE [dbo].[OperationClaims] (
+    [Id]   INT           IDENTITY (1, 1) NOT NULL,
+    [Name] VARCHAR (250) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[UserOperationClaims] (
+    [Id]               INT IDENTITY (1, 1) NOT NULL,
+    [UserId]           INT NOT NULL,
+    [OperationClaimId] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 SET IDENTITY_INSERT [dbo].[Brands] ON
