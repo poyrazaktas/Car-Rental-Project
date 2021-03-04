@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.Utils.Results;
 using DataAccess.Abstract;
@@ -39,26 +40,31 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarUpdated);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAllByModelYear(int year)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ModelYear == year), Messages.CarsListed);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAllByColorId(int id)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == id), Messages.CarsListed);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAllByBrandId(int id)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId == id), Messages.CarsListed);
         }
 
+        [CacheAspect]
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarsListed);

@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
+using Core.Aspects.Autofac.Caching;
 using Core.Utils.Business;
 using Core.Utils.Results;
 using DataAccess.Abstract;
@@ -20,6 +22,8 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
+        [SecuredOperation("carimagemanager.add,user")]
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Add(CarImage carImage)
         {
             var result = Rules.Run(CheckIfCarImagesExceed(carImage.CarId));
@@ -31,6 +35,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageAdded);
         }
 
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Update(CarImage carImage)
         {
             _carImageDal.Update(carImage);
@@ -48,6 +53,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageDeleted);
         }
 
+        [CacheAspect]
         public IDataResult<List<CarImage>> GetAllByCarId(int carId)
         {
             var result = Rules.Run(CheckIfCarImageExists(carId));

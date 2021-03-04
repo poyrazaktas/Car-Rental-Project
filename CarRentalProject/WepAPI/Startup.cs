@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.DependencyResolvers;
+using Core.Extensions;
 using Core.Utils.IoC;
 using Core.Utils.Security.Encryption;
 using Core.Utils.Security.JWT;
@@ -54,7 +56,8 @@ namespace WepAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
-            ServiceTool.Create(services);
+            //ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
