@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.Utils.Business;
 using Core.Utils.Results;
@@ -23,6 +24,7 @@ namespace Business.Concrete
             _rentalDal = rentalDal;
         }
 
+        //[TransactionScopeAspect]
         public IResult Add(Rental rental)
         {
             var result = Rules.Run(CheckIfCarReturned(rental.CarId));

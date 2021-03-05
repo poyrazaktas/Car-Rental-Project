@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Utils.Business;
 using Core.Utils.Results;
 using DataAccess.Abstract;
@@ -54,6 +55,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        //[PerformanceAspect(30)]
         public IDataResult<List<CarImage>> GetAllByCarId(int carId)
         {
             var result = Rules.Run(CheckIfCarImageExists(carId));

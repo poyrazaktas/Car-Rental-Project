@@ -32,43 +32,41 @@
     </ol>
     </li>
     <li> <del>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</del> </li>
-    <li>11. Hafta Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
-    <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
-    <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
-    <li>8. Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
+    <li>11. Gün Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
+    <li>7. Gündeki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
+    <li>7. Gündeki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
+    <li>8. Gün ödevine ilişkin EntityFramework kodları yazıldı.</li>
     <li><del>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp">bu</a> şekildedir.</del></li>
-    <li>9. Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
-    <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
-    <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
-    <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
-    <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
-    <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
-    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/RentalManager.cs">RentalManager</a> sınıfına taşınmıştır. </li>
-    <li>13. Hafta ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
+    <li>9. Gün ödevine ilişkin Core Katmanı kodları yazıldı.</li>
+    <li>10. Gün ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
+    <li>10. Gün ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
+    <li>11. Gün ödevine ilişkin WebAPI katmanı kuruldu.</li>
+    <li>11. Günda Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
+    <li>12. Gün ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
+    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Gün Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/RentalManager.cs">RentalManager</a> sınıfına taşınmıştır. </li>
+    <li>13. Gün ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
     <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. </li>
     <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
-    <li>14. Hafta ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u için metot seçilmedi.</li>
+    <li>14. Gün ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/CarImageManager.cs">CarImageManager</a> ekleme (Add) metoduna eklendi.</li>
+    <li>15. Gün ödevine ilişkin Cache, CacheRemove, TransactionScope ve Performance Aspectleri eklendi.</li>
     <li> Postman de yapılan bazı istekler:
-      <h2><b>Eski İstekler</b> 11.Hafta Ödevi</h2>
-      <ul>
-        <li>GET: https://localhost:44324/api/rentals/details </li>
-        <li>GET: https://localhost:44324/api/users/all </li>
-        <li>GET: https://localhost:44324/api/cars/brand?id=3</li>
-        <li>GET: https://localhost:44324/api/cars/color?id=7</li>
-        <li>POST: https://localhost:44324/api/rentals<br> 
-        BODY(raw -JSON): 
-        <pre> 
-        {
-            "carId": 4,
-            "customerId": 1,
-            "rentDate": "2021-02-14T00:00:00",
-            "returnDate": "2021-02-19T00:00:00"
-        }
-        </pre>
-        <h2><b>Yeni İstekler</b> 13.Hafta Ödevi</h2>
-        <ul>
-          <li>GET: https://localhost:44324/api/carimages/photos?id=1</li>
-          <li>POST: https://localhost:44324/api/carimages/add<br> 
+        <h2><b>Yeni İstekler</b> 13. ve 15.Gün Ödevi</h2>
+        <ul>SecuredOperation Aspecti olan metotlar için kullanıcının ilk önce register ve login olması, loginden alınan tokenin ilgili metoda Authorization'ı Bearer Token olarak vermesi gerekir.
+        Ayrıca login olan kullanıcının UserOperationClaims tablosunda gerekli Claimlerinin olduğundan emin olunuz.
+        <li>POST : https://localhost:44324/api/auth/register<br>
+            POST: https://localhost:44324/api/auth/login <br>
+            Type: BODY(raw -JSON): 
+            <pre>     {
+    "firstName": "Poyraz",
+    "lastName": "Aktaş",
+    "email": "poyraz@poyraz.com",
+    "password": "12345"
+      }</pre>
+            <h2>Gelen token ile</h2>    
+          <li><h3>Authorization</h3>
+          Type: Bearer Token
+          <h6>eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEwMDYiLCJlbWFpbCI6ImNwcnVtdXRAcG95cmF6LmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJVbXV0IMOHYXBhciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJuYmYiOjE2MTQ4NDgxMjYsImV4cCI6MTYxNDg0ODcyNiwiaXNzIjoicG95cmF6QHBveXJhei5jb20iLCJhdWQiOiJwb3lyYXpAcG95cmF6LmNvbSJ9.VIjKzkawKI5eiys8BCwSfUVTTQgmq2fRrsrGnt4DvwO1vumOywVIPplOEA-AdX5Q_ru9UJLtlQVItC4N9FHieQ</h6>
+          <h3>POST: https://localhost:44324/api/carimages/add</h3><br> 
         <h3><b>form-data:</b></h3> 
         <table style="width:100%">
           <tr>
@@ -87,9 +85,25 @@
             <td>File</td>
           </tr>
         </table>
-        <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
         </li>
-      </ul>
+        <li>GET: https://localhost:44324/api/carimages/photos?id=1</li>
+        <h2><b>Eski İstekler</b> 11.Gün Ödevi</h2>
+          <ul>
+            <li>GET: https://localhost:44324/api/rentals/details </li>
+            <li>GET: https://localhost:44324/api/users/all </li>
+            <li>GET: https://localhost:44324/api/cars/brand?id=3</li>
+            <li>GET: https://localhost:44324/api/cars/color?id=7</li>
+            <li>POST: https://localhost:44324/api/rentals<br> 
+            Type: BODY(raw -JSON): 
+            <pre>            {
+            "carId": 4,
+            "customerId": 1,
+            "rentDate": "2021-02-14T00:00:00",
+            "returnDate": "2021-02-19T00:00:00"
+            }</pre>
+          <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
+            </li>
+        </ul>
     </li>
     <li><del>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</del></li>
     <li><del>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </del></li>
@@ -257,3 +271,7 @@ RentACar projenizde;
 ## Ödev 14
 
 1. RentACar projenize JWT entegrasyonu yapınız.✓
+   
+## Ödev 15
+
+1. RentACar projenize Cache, Transaction ve Performance aspectlerini ekleyiniz.✓
