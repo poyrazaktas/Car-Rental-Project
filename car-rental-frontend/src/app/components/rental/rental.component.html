@@ -1,0 +1,52 @@
+<div *ngIf="isDataLoaded == false">
+  <div class="spinner-grow text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="isDataLoaded != false">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Brand</th>
+        <th>Description</th>
+        <th>DailyPrice</th>
+        <th>Rent Date</th>
+        <th>Return Date</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let rental of rentals">
+      <td>{{ rental.customerFirstName }}</td>
+      <td>{{ rental.customerLastName }}</td>
+      <td>{{ rental.brandName }}</td>
+      <td>{{ rental.carDescription }}</td>
+      <td>{{ rental.carDailyPrice }}</td>
+      <td>{{ rental.rentDate }}</td>
+      <td>{{ rental.returnDate }}</td>
+    </tr>
+  </table>
+</div>

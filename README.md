@@ -11,12 +11,15 @@
   <li> <a href="#kamp-ödev-5"> Ödev 5</a> </li>
   <li> Ödev 6 SQL ile ilgiliydi. </li>
   <li> <a href="#araba-kiralama-projesi"> Araba Kiralama Projesi</a> </li>
+  <li> <a href="#araba-kiralama-projesi-backend"> Araba Kiralama Projesi Backend</a> </li>
+  <li> <a href="#araba-kiralama-projesi-frontend"> Araba Kiralama Projesi Frontend</a> </li>
 </ul>
 </h3>
 
-# [Araba Kiralama Projesi](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/CarRentalProject)
+# Araba Kiralama Projesi
+<h3>Güne ilişkin ödevin detaylarına <a href="#ödev-detayları">buradan</a> ulaşabilirsiniz.</h3>
 
-## Araba Kiralama Projesi ile ilgili Notlar
+## [Araba Kiralama Projesi Backend](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/CarRentalProject)
 
 <h4>
   <ul>
@@ -110,6 +113,14 @@
   </ul>
 </h4>
 
+## [Araba Kiralama Projesi Frontend](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/car-rental-frontend)
+<h4>
+  <ul>
+    <li>17. Gün ödevine ilişkin Angular'daki arayüz isterleri tamamlandı.</li>
+  </ul>
+</h4>
+
+
 # [Kamp Ödev 5](https://github.com/poyrazaktas/YazilimGelistiriciKampi/tree/master/KampOdev5)
 
 Bir oyun yazmak istiyorsunuz. Bu yazılım için backend kodlarını C# ile geliştirmeyi planlıyoruz. Yeni üye, satış ve kampanya yönetimi yapılması isteniyor.
@@ -157,7 +168,7 @@ _PlayerManager.cs_' de bulunan ekleme metodunda _mernis validasyon_ simülasyonu
 
 Ayrıca _Concrete_ dizininde bulunan _Platforms_ dizininde, çeşitli oyun dağıtım platformlarına yer verilmiştir.
 
-
+# Ödev Detayları
 
 ## Ödev 7
 
@@ -275,3 +286,15 @@ RentACar projenizde;
 ## Ödev 15
 
 1. RentACar projenize Cache, Transaction ve Performance aspectlerini ekleyiniz.✓
+
+## Ödev 17
+
+RentACar projeniz için:
+
+1. Angular projesi oluşturunuz✓
+2. Bootstrap entegrasyonu yapınız✓
+3. Markaları listeleyiniz✓
+4. Renkleri listeleyiniz✓
+5. Müşterileri listeleyiniz✓
+6. Arabaları listeleyiniz. (Arabaları listelerken BrandId yerine BrandName, ColorId yerine ColorName şeklinde gösteriniz)✓
+7. Kiralamaları listeleyiniz (Rentals) CarId yerine BrandName, CustomerId yerine FirstName + LastName şeklinde gösteriniz.✓

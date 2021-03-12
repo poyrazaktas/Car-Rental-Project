@@ -1,0 +1,46 @@
+<div *ngIf="isDataLoaded == false">
+  <div class="spinner-grow text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="isDataLoaded != false">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Description</th>
+        <th>Daily Price</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let car of cars">
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.carColor }}</td>
+      <td>{{ car.carDescription }}</td>
+      <td>{{ car.carDailyPrice }}</td>
+    </tr>
+  </table>
+</div>
