@@ -34,7 +34,11 @@
       </tr>
     </thead>
 
-    <tr *ngFor="let brand of brands">
+    <tr
+      *ngFor="let brand of brands"
+      (click)="setCurrentBrand(brand)"
+      routerLink="cars/brand/{{ brand.id }}"
+    >
       <td>{{ brand.id }}</td>
       <td>{{ brand.name }}</td>
     </tr>

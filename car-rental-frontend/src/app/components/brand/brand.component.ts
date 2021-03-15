@@ -11,6 +11,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   isDataLoaded = false;
+  currentBrand: Brand;
   constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {
@@ -21,5 +22,10 @@ export class BrandComponent implements OnInit {
       this.brands = response.data;
       this.isDataLoaded = true;
     });
+  }
+
+  setCurrentBrand(brand: Brand) {
+    this.currentBrand = brand;
+    console.log(this.currentBrand.name);
   }
 }
