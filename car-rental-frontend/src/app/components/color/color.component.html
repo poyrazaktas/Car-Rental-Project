@@ -34,7 +34,7 @@
       </tr>
     </thead>
 
-    <tr *ngFor="let color of colors">
+    <tr *ngFor="let color of colors" routerLink="/cars/color/{{ color.id }}">
       <td>{{ color.id }}</td>
       <td>{{ color.name }}</td>
     </tr>

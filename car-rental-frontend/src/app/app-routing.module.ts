@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrandComponent } from './components/brand/brand.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
 import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
@@ -20,7 +21,12 @@ const routes: Routes = [
     component: CarComponent,
   },
   {
-    path: 'cars/brand/:id',
+    path: 'cars/brand/:brandId',
+    pathMatch: 'full',
+    component: CarComponent,
+  },
+  {
+    path: 'cars/color/:colorId',
     pathMatch: 'full',
     component: CarComponent,
   },
@@ -36,10 +42,14 @@ const routes: Routes = [
     path: 'brands',
     component: BrandComponent,
   },
+  {
+    path: 'cardetails/:carId',
+    component: CarDetailComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

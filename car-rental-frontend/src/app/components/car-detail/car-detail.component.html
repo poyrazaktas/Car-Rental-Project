@@ -26,21 +26,15 @@
 </div>
 
 <div *ngIf="isDataLoaded != false">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Brand</th>
-      </tr>
-    </thead>
-
-    <tr
-      *ngFor="let brand of brands"
-      (click)="setCurrentBrand(brand)"
-      routerLink="/cars/brand/{{ brand.id }}"
-    >
-      <td>{{ brand.id }}</td>
-      <td>{{ brand.name }}</td>
-    </tr>
-  </table>
+  <div class="card" style="width: 18rem" *ngFor="let carDetail of carDetails">
+    <img
+      src="https://localhost:44324/uploads/{{ carDetail.imageName }}"
+      class="card-img-top"
+      alt="{{ carDetail.id }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text"></p>
+    </div>
+  </div>
 </div>

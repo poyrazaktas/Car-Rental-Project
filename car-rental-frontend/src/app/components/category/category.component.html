@@ -1,7 +1,10 @@
 <ul class="list-group">
-  <li class="list-group-item">Cars</li>
-  <li class="list-group-item">Rentals</li>
-  <li class="list-group-item">Colors</li>
-  <li class="list-group-item">Brands</li>
-  <li class="list-group-item">Customers</li>
+  <li
+    [class]="getCurrentCategoryClass(category)"
+    *ngFor="let category of categories"
+    (click)="setCurrentCategory(category)"
+    routerLink="/{{ category.toLowerCase() }}"
+  >
+    {{ category }}
+  </li>
 </ul>

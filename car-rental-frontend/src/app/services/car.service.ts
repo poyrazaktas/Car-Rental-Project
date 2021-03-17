@@ -14,11 +14,18 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl + extension);
   }
 
-  getCarsByBrandId(id: number): Observable<ListResponseModel<Car>> {
-    let extension = 'cars/brand?id=';
-    console.log(this.apiUrl + extension + id);
+  getCarsByBrandId(brandId: number): Observable<ListResponseModel<Car>> {
+    let extension = 'cars/brand?brandId=';
+    console.log(this.apiUrl + extension + brandId);
     return this.httpClient.get<ListResponseModel<Car>>(
-      this.apiUrl + extension + id
+      this.apiUrl + extension + brandId
+    );
+  }
+  getCarsByColorId(colorId: number): Observable<ListResponseModel<Car>> {
+    let extension = 'cars/color?colorId=';
+    console.log(this.apiUrl + extension + colorId);
+    return this.httpClient.get<ListResponseModel<Car>>(
+      this.apiUrl + extension + colorId
     );
   }
 }

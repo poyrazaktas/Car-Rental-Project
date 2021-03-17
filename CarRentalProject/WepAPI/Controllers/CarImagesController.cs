@@ -46,13 +46,14 @@ namespace WepAPI.Controllers
             }
             var extension = image.File.FileName.Split('.')[1]; // dosya isminin noktadan sonrası uzantıdır
             Guid guid = Guid.NewGuid();
-            var imagePath = path + guid.ToString() + "." + extension;
+            var imageName = guid.ToString() + "." + extension;
+            var imagePath = path + imageName;
             using (FileStream fileStream = System.IO.File.Create(imagePath))
             {
                 image.File.CopyTo(fileStream);
                 fileStream.Flush();
             }
-            var result = _carImageService.Add(new CarImage { CarId = carId, Date = DateTime.Now, ImagePath = imagePath });
+            var result = _carImageService.Add(new CarImage { CarId = carId, ImageName = imageName, Date = DateTime.Now, ImagePath = imagePath });
             if (result.Success)
             {
                 return Ok(result);
