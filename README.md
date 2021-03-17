@@ -117,6 +117,7 @@
 <h4>
   <ul>
     <li>17. Gün ödevine ilişkin Angular'daki arayüz isterleri tamamlandı.</li>
+    <li>18. Gün ödevine ilişkin routing işlemleri tamamlandı. Seçilen arabanın resmi listelendi. Resmi olmayan arabalara dair Http 400 hatası daha sonra giderilebilir.</li>
   </ul>
 </h4>
 
@@ -234,7 +235,7 @@ Araba günlük fiyatı 0'dan büyük olmalıdır.✓
 
 3. Kullanıcılar ve müşteriler ilişkilidir.✓
 
-4)Arabanın kiralanma bilgisini tutan tablo oluşturunuz. Rentals-->Id, CarId, CustomerId, RentDate(Kiralama Tarihi), ReturnDate(Teslim Tarihi). ✓
+4. Arabanın kiralanma bilgisini tutan tablo oluşturunuz. Rentals-->Id, CarId, CustomerId, RentDate(Kiralama Tarihi), ReturnDate(Teslim Tarihi). ✓
 
 5. Araba teslim edilmemişse ReturnDate null'dır.✓
 
@@ -298,3 +299,9 @@ RentACar projeniz için:
 5. Müşterileri listeleyiniz✓
 6. Arabaları listeleyiniz. (Arabaları listelerken BrandId yerine BrandName, ColorId yerine ColorName şeklinde gösteriniz)✓
 7. Kiralamaları listeleyiniz (Rentals) CarId yerine BrandName, CustomerId yerine FirstName + LastName şeklinde gösteriniz.✓
+
+## Ödev 18
+
+1. Brand listesinde herhangi bir marka seçildiğinde, o markaya ait arabaları listeleyiniz.✓
+2. Color listesinde herhangi bir renk seçildiğinde, o renge ait arabaları listeleyiniz.✓
+3. Car listesinde bir arabaya tıklandığında o arabaya ait detay sayfası oluşturunuz. Bu sayfada bu araca ait resimleri de gösteriniz.✓

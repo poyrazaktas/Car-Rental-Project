@@ -25,7 +25,10 @@
   </div>
 </div>
 
-<div *ngIf="isDataLoaded != false">
+<div *ngIf="isDataLoaded != false" class="row">
+  <div>
+    <h1>{{ message }}</h1>
+  </div>
   <div class="card" style="width: 18rem" *ngFor="let carDetail of carDetails">
     <img
       src="https://localhost:44324/uploads/{{ carDetail.imageName }}"
@@ -34,7 +37,7 @@
     />
     <div class="card-body">
       <h5 class="card-title"></h5>
-      <p class="card-text"></p>
+      <p class="card-text">{{ carDetail.date }}</p>
     </div>
   </div>
 </div>
