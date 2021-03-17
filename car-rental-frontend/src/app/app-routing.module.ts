@@ -34,7 +34,6 @@ const routes: Routes = [
   },
   {
     path: 'brands',
-    pathMatch: 'full',
     component: BrandComponent,
   },
 ];

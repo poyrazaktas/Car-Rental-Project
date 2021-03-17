@@ -45,7 +45,7 @@ namespace WepAPI.Controllers
         [HttpGet("brand")]
         public IActionResult GetAllByBrandId(int id)
         {
-            var result = _carService.GetAllByBrandId(id);
+            var result = _carService.GetCarDetailsByBrandId(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -56,7 +56,7 @@ namespace WepAPI.Controllers
         [HttpGet("color")]
         public IActionResult GetAllByColorId(int id)
         {
-            var result = _carService.GetAllByColorId(id);
+            var result = _carService.GetCarDetailsByColorId(id);
             if (result.Success)
             {
                 return Ok(result);
