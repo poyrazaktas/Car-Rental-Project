@@ -24,20 +24,42 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <input id="filterText" [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search Cars">
+    </div>
+    <div class="col">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="currentBrand">
+        <option selected [ngValue]="undefined">Brands</option>
+        <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
 
+      </select>
+    </div>
+    <div class="col">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="currentColor">
+        <option selected [ngValue]="undefined">Colors</option>
+        <option *ngFor="let color of colors" [ngValue]="color"> {{color.name}} </option>
+      </select>
+    </div>
+  </div>
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  You've searched for {{ filterText }}.
+</div>
 <div *ngIf="isDataLoaded != false">
   <table class="table">
     <thead>
-      <tr>
-        <th>Brand</th>
-        <th>Color</th>
-        <th>Description</th>
-        <th>Daily Price</th>
-      </tr>
+    <tr>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Description</th>
+      <th>Daily Price</th>
+    </tr>
     </thead>
 
     <tr
-      *ngFor="let car of cars"
+      *ngFor="let car of cars | filterCars:filterText|filterCarBrands:currentBrand|filterCarColors:currentColor"
       (click)="setCurrentCar(car)"
       routerLink="/cardetails/{{ car.carId }}"
     >

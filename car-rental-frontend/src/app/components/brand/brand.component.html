@@ -24,18 +24,24 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-
+<div class="mb-3">
+  <label class="form-label">Search Brands</label>
+  <input id="filterText" [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search">
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  You've searched for {{ filterText }}.
+</div>
 <div *ngIf="isDataLoaded != false">
   <table class="table">
     <thead>
-      <tr>
-        <th>Id</th>
-        <th>Brand</th>
-      </tr>
+    <tr>
+      <th>Id</th>
+      <th>Brand</th>
+    </tr>
     </thead>
 
     <tr
-      *ngFor="let brand of brands"
+      *ngFor="let brand of brands | filterBrands:filterText"
       (click)="setCurrentBrand(brand)"
       routerLink="/cars/brand/{{ brand.id }}"
     >

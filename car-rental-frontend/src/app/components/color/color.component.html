@@ -24,17 +24,23 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-
+<div class="mb-3">
+  <label class="form-label">Search Colors</label>
+  <input id="filterText" [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search">
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  You've searched for {{ filterText }}.
+</div>
 <div *ngIf="isDataLoaded != false">
   <table class="table">
     <thead>
-      <tr>
-        <th>Id</th>
-        <th>Color</th>
-      </tr>
+    <tr>
+      <th>Id</th>
+      <th>Color</th>
+    </tr>
     </thead>
 
-    <tr *ngFor="let color of colors" routerLink="/cars/color/{{ color.id }}">
+    <tr *ngFor="let color of colors | filterColors:filterText" routerLink="/cars/color/{{ color.id }}">
       <td>{{ color.id }}</td>
       <td>{{ color.name }}</td>
     </tr>
