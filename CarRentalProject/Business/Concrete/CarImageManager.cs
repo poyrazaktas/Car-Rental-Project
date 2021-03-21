@@ -23,7 +23,7 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
-        [SecuredOperation("carimagemanager.add,user")]
+        [SecuredOperation("admin")]
         [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Add(CarImage carImage)
         {
@@ -36,6 +36,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageAdded);
         }
 
+        [SecuredOperation("admin")]
         [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Update(CarImage carImage)
         {
@@ -55,7 +56,6 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        //[PerformanceAspect(30)]
         public IDataResult<List<CarImage>> GetAllByCarId(int carId)
         {
             var result = Rules.Run(CheckIfCarImageExists(carId));

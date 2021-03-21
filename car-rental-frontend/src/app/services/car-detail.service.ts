@@ -7,10 +7,10 @@ import { CarDetail } from '../models/carDetail';
   providedIn: 'root',
 })
 export class CarDetailService {
-  apiUrl: string = 'https://localhost:44324/api/';
+  apiUrl = 'https://localhost:44324/api/';
   constructor(private httpClient: HttpClient) {}
   getCarDetails(carId: number): Observable<ListResponseModel<CarDetail>> {
-    let extension = 'carimages/photos?carId=';
+    const extension = 'carimages/photos?carId=';
     return this.httpClient.get<ListResponseModel<CarDetail>>(
       this.apiUrl + extension + carId
     );

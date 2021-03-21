@@ -13,11 +13,16 @@ import {NaviComponent} from './components/navi/navi.component';
 import {CategoryComponent} from './components/category/category.component';
 import {CarDetailComponent} from './components/car-detail/car-detail.component';
 import {FormsModule} from '@angular/forms';
-import { FilterBrandsPipe } from './pipes/filter-brands.pipe';
-import { FilterColorsPipe } from './pipes/filter-colors.pipe';
-import { FilterCarsPipe } from './pipes/filter-cars.pipe';
-import { FilterCarBrandsPipe } from './pipes/filter-car-brands.pipe';
-import { FilterCarColorsPipe } from './pipes/filter-car-colors.pipe';
+import {FilterBrandsPipe} from './pipes/filter-brands.pipe';
+import {FilterColorsPipe} from './pipes/filter-colors.pipe';
+import {FilterCarsPipe} from './pipes/filter-cars.pipe';
+import {FilterCarBrandsPipe} from './pipes/filter-car-brands.pipe';
+import {FilterCarColorsPipe} from './pipes/filter-car-colors.pipe';
+import {NgImageSliderModule} from 'ng-image-slider';
+import {RentACarComponent} from './components/rent-a-car/rent-a-car.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +40,15 @@ import { FilterCarColorsPipe } from './pipes/filter-car-colors.pipe';
     FilterCarsPipe,
     FilterCarBrandsPipe,
     FilterCarColorsPipe,
+    RentACarComponent,
+    PaymentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgImageSliderModule,
+    BrowserAnimationsModule, ToastrModule.forRoot(
+    {
+      positionClass: 'toast-bottom-right',
+    }
+  )],
   providers: [],
   bootstrap: [AppComponent],
 })

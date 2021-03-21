@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WepAPI.Controllers
@@ -35,6 +36,17 @@ namespace WepAPI.Controllers
         public IActionResult GetCarDetails()
         {
             var result = _carService.GetCarDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("detailsbycarid")]
+        public IActionResult GetCarDetails(int carId)
+        {
+            var result = _carService.GetCarDetailsByCarId(carId);
             if (result.Success)
             {
                 return Ok(result);

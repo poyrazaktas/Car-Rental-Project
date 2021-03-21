@@ -1,53 +1,33 @@
-<div *ngIf="isDataLoaded == false">
-  <div class="spinner-grow text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-secondary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-danger" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-warning" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-dark" role="status">
+<div *ngIf="isDataLoaded == false" class="d-flex justify-content-center">
+  <div class="spinner-border text-primary" style="width: 10rem; height: 10rem" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-<div class="container">
-  <div class="row align-items-start">
-    <div class="col">
-      <input id="filterText" [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search Cars">
-    </div>
-    <div class="col">
-      <select class="form-select" aria-label="Default select example" [(ngModel)]="currentBrand">
-        <option selected [ngValue]="undefined">Brands</option>
-        <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
 
-      </select>
-    </div>
-    <div class="col">
-      <select class="form-select" aria-label="Default select example" [(ngModel)]="currentColor">
-        <option selected [ngValue]="undefined">Colors</option>
-        <option *ngFor="let color of colors" [ngValue]="color"> {{color.name}} </option>
-      </select>
+<div *ngIf="isDataLoaded != false">
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <input id="filterText" [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search Cars">
+      </div>
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="currentBrand">
+          <option selected [ngValue]="undefined">Brands</option>
+          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name}}</option>
+
+        </select>
+      </div>
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="currentColor">
+          <option selected [ngValue]="undefined">Colors</option>
+          <option *ngFor="let color of colors" [ngValue]="color"> {{color.name}} </option>
+        </select>
+      </div>
     </div>
   </div>
-</div>
-<div *ngIf="filterText" class="alert alert-success">
-  You've searched for {{ filterText }}.
-</div>
-<div *ngIf="isDataLoaded != false">
+  <div *ngIf="filterText" class="alert alert-success">
+    You've searched for {{ filterText }}.
+  </div>
   <table class="table">
     <thead>
     <tr>

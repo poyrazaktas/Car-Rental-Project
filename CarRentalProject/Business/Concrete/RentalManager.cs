@@ -58,9 +58,13 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalUpdated);
         }
 
-        private IResult CheckIfCarReturned(int carId)
+        public IResult CheckIfCarReturned(int carId)
         {
             var resultList = _rentalDal.GetAll(r => r.CarId == carId).ToList();
+            if (resultList.Count == 0)
+            {
+                return new SuccessResult();
+            }
             var result = resultList.Last().ReturnDate != null ? true : false;
             if (result)
             {

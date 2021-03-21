@@ -42,6 +42,17 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("returned")]
+        public IActionResult GetRentalDetails(int carId)
+        {
+            var result = _rentalService.CheckIfCarReturned(carId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Rental rental)
         {

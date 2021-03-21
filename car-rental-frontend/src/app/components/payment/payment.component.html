@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Ödeme Bilgileri</h5>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="cardId" class="form-label">Kart Numarası</label>
+      <input type="text" class="form-control" [(ngModel)]="cardId"
+             id="cardId" placeholder="Kart üzerindeki hesap numarasını giriniz">
+    </div>
+    <div class="mb-3">
+      <label for="cardCvc" class="form-label">Kart CVC</label>
+      <input type="text" class="form-control" id="cardCvc" [(ngModel)]="cardCvc"
+             placeholder="Kart üzerindeki 3 haneli güvenlik numarasını giriniz">
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="button" (click)="checkCardInfo()">Ödemeyi Onayla</button>
+    </div>
+  </div>
+</div>
+

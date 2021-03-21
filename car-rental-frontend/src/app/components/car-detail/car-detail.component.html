@@ -1,43 +1,13 @@
-<div *ngIf="isDataLoaded == false">
-  <div class="spinner-grow text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-secondary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-danger" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-warning" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="spinner-grow text-dark" role="status">
+<div *ngIf="isDataLoaded == false" class="d-flex justify-content-center">
+  <div class="spinner-border text-primary" style="width: 10rem; height: 10rem" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
 
-<div *ngIf="isDataLoaded != false" class="row">
-  <div>
-    <h1>{{ message }}</h1>
-  </div>
-  <div class="card" style="width: 18rem" *ngFor="let carDetail of carDetails">
-    <img
-      src="https://localhost:44324/uploads/{{ carDetail.imageName }}"
-      class="card-img-top"
-      alt="{{ carDetail.id }}"
-    />
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text">{{ carDetail.date }}</p>
-    </div>
+<div>
+  <ng-image-slider [imageSize]="{width: 800, height: 600, space: 4}" [images]="carImages" #nav></ng-image-slider>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button" routerLink="/rent/{{CarId}}" *ngIf="this.router.url.indexOf('/rent')">Rent This Car</button>
   </div>
 </div>
+

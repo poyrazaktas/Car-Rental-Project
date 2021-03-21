@@ -118,6 +118,8 @@
   <ul>
     <li>17. Gün ödevine ilişkin Angular'daki arayüz isterleri tamamlandı.</li>
     <li>18. Gün ödevine ilişkin routing işlemleri tamamlandı. Seçilen arabanın resmi listelendi. Resmi olmayan arabalara dair Http 400 hatası daha sonra giderilebilir.</li>
+    <li>19. Gün ödevine ilişkin pipe ile filtreleme işlemleri tamamlandı. Seçilen arabanın kiralanma imkanı, fake banka servisi eklendi ve toastr ile bilgilendirme eklendi.</li>
+    <li>19. Gün ödevine ilişikin yazılan fake banka servisi, <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/WepAPI/Controllers/CardInformatiosController.cs">CardInformationsController'</a> da bulunmaktadır. Kullanıcı 1000 liralık bakiyesini bir oturumda dilediği gibi harcayabilir. </li>
   </ul>
 </h4>
 
@@ -305,3 +307,14 @@ RentACar projeniz için:
 1. Brand listesinde herhangi bir marka seçildiğinde, o markaya ait arabaları listeleyiniz.✓
 2. Color listesinde herhangi bir renk seçildiğinde, o renge ait arabaları listeleyiniz.✓
 3. Car listesinde bir arabaya tıklandığında o arabaya ait detay sayfası oluşturunuz. Bu sayfada bu araca ait resimleri de gösteriniz.✓
+
+## Ödev 19
+
+1. Car, Brand, Color için pipe ile arama desteği ekleyiniz.✓
+2. Car sayfasına 2 adet açılır kutu ekleyiniz. Html-Select Option. Bu açılır kutularda sırasıyla Marka ve Renk listeleyiniz.✓
+3. Açılır kutuların yanına "Filtrele" butonu ekleyiniz.✓
+4. Filtrele butonuna tıklandığında apiden ilgili filtreye uygun arabaları listeleyiniz.✓
+5. Araba detay sayfasında "Kirala" butonu ekleyiniz. Bu aracı kiralayabilecek sistemi yazınız. Araba hali hazırda başkası tarafından seçilen tarih aralığında kiralanmışsa, kiralama işlemi yapmayınız.✓
+6. Kiralama işleminde tarihler seçildikten sonra, yeni bir sayfada kredi kartıyla ödeme desteği getiriniz.✓
+7. Ödeme işlemi için api'de sahte bir banka servisi yazınız.✓
+8. Tüm işlemler için Toastr desteği ekleyiniz.✓
