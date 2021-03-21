@@ -119,7 +119,7 @@
     <li>17. Gün ödevine ilişkin Angular'daki arayüz isterleri tamamlandı.</li>
     <li>18. Gün ödevine ilişkin routing işlemleri tamamlandı. Seçilen arabanın resmi listelendi. Resmi olmayan arabalara dair Http 400 hatası daha sonra giderilebilir.</li>
     <li>19. Gün ödevine ilişkin pipe ile filtreleme işlemleri tamamlandı. Seçilen arabanın kiralanma imkanı, fake banka servisi eklendi ve toastr ile bilgilendirme eklendi.</li>
-    <li>19. Gün ödevine ilişikin yazılan fake banka servisi, <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/WepAPI/Controllers/CardInformatiosController.cs">CardInformationsController'</a> da bulunmaktadır. Kullanıcı 1000 liralık bakiyesini bir oturumda dilediği gibi harcayabilir. </li>
+    <li>19. Gün ödevine ilişikin yazılan fake banka servisi, <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/WepAPI/Controllers/CardInformationsController.cs">CardInformationsController'</a> da bulunmaktadır. Kullanıcı 1000 liralık bakiyesini bir oturumda dilediği gibi harcayabilir. </li>
   </ul>
 </h4>
 
