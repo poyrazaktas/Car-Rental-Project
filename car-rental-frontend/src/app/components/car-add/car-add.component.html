@@ -1,0 +1,52 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title"> Araba Ekle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="carAddForm">
+          <div class="mb-3">
+            <label for="colorId">Renk Id</label>
+            <input type="number" id="colorId" formControlName="colorId"
+                   class="form-control" placeholder="Renk Id">
+          </div>
+          <div class="mb-3">
+            <label for="brandId">Marka Id</label>
+            <input type="number" id="brandId" formControlName="brandId"
+                   class="form-control" placeholder="Marka Id">
+          </div>
+          <div class="mb-3">
+            <label for="modelYear">Model Yılı</label>
+            <input type="number" id="modelYear" formControlName="modelYear"
+                   class="form-control" placeholder="Model yılı">
+          </div>
+          <div class="mb-3">
+            <label for="dailyPrice">Günlük Kirası</label>
+            <input type="number" id="dailyPrice" formControlName="dailyPrice"
+                   class="form-control" placeholder="Günlük kira">
+          </div>
+          <div class="mb-3">
+            <label for="description">Araba Açıklaması</label>
+            <input type="text" id="description" formControlName="description"
+                   class="form-control" placeholder="Açıklama ...">
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" (click)="add()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <app-brand></app-brand>
+  </div>
+
+  <div class="col-md-6">
+    <app-color></app-color>
+  </div>
+</div>

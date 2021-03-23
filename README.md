@@ -52,6 +52,7 @@
     <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
     <li>14. Gün ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/CarImageManager.cs">CarImageManager</a> ekleme (Add) metoduna eklendi.</li>
     <li>15. Gün ödevine ilişkin Cache, CacheRemove, TransactionScope ve Performance Aspectleri eklendi.</li>
+    <li>20. Gün ödevine ilişkin Core katmanında Extensionsa Error Middleware eklenmiştir.</li>
     <li> Postman de yapılan bazı istekler:
         <h2><b>Yeni İstekler</b> 13. ve 15.Gün Ödevi</h2>
         <ul>SecuredOperation Aspecti olan metotlar için kullanıcının ilk önce register ve login olması, loginden alınan tokenin ilgili metoda Authorization'ı Bearer Token olarak vermesi gerekir.
@@ -120,6 +121,7 @@
     <li>18. Gün ödevine ilişkin routing işlemleri tamamlandı. Seçilen arabanın resmi listelendi. Resmi olmayan arabalara dair Http 400 hatası daha sonra giderilebilir.</li>
     <li>19. Gün ödevine ilişkin pipe ile filtreleme işlemleri tamamlandı. Seçilen arabanın kiralanma imkanı, fake banka servisi eklendi ve toastr ile bilgilendirme eklendi.</li>
     <li>19. Gün ödevine ilişikin yazılan fake banka servisi, <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/WepAPI/Controllers/CardInformationsController.cs">CardInformationsController'</a> da bulunmaktadır. Kullanıcı 1000 liralık bakiyesini bir oturumda dilediği gibi harcayabilir. </li>
+    <li>20. Gün ödevine ilişkin Reactive Formlarla araba, renk, marka ekleme desteği getirilmiştir.</li>
   </ul>
 </h4>
 
@@ -318,3 +320,10 @@ RentACar projeniz için:
 6. Kiralama işleminde tarihler seçildikten sonra, yeni bir sayfada kredi kartıyla ödeme desteği getiriniz.✓
 7. Ödeme işlemi için api'de sahte bir banka servisi yazınız.✓
 8. Tüm işlemler için Toastr desteği ekleyiniz.✓
+
+## Ödev 20
+
+1. Backend Custom Error Middleware ekleyip fluent validation için refactoring yapınız.✓
+2. Reactive Forms kullanarak Brand, Color, Car Ekleme sayfalarını oluşturunuz.✓
+3. Brand,Color,Car listesinde güncelleme butonu ekleyiniz. Tıklanan ilgili elemanın detay sayfasına yönlendirerek güncelleme imkanı veriniz.✓
+4. Toast desteği veriniz.✓

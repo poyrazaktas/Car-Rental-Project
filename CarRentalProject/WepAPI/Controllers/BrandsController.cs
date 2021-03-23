@@ -24,7 +24,6 @@ namespace WepAPI.Controllers
         [HttpGet("all")]
         public IActionResult GetAll()
         {
-            Thread.Sleep(1500);
             var result = _brandService.GetAll();
             if (result.Success)
             {

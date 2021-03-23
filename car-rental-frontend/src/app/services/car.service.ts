@@ -3,12 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ListResponseModel} from 'src/app/models/listResponseModel';
 import {Car} from '../models/car';
+import {ResponseModel} from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CarService {
   apiUrl = 'https://localhost:44324/api/';
+  private currentCar: Car;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -40,4 +42,20 @@ export class CarService {
       this.apiUrl + extension + carId);
   }
 
+  addCar(car: Car): Observable<ResponseModel> {
+    const extension = 'cars/add';
+    return this.httpClient.post<ResponseModel>(this.apiUrl + extension, car);
+  }
+  updateCar(car: Car): Observable<ResponseModel> {
+    const extension = 'cars/update';
+    return this.httpClient.post<ResponseModel>(this.apiUrl + extension, car);
+  }
+
+  setCurrentCar(car: Car) {
+    this.currentCar = car;
+  }
+
+  getCurrentCar() {
+    return this.currentCar;
+  }
 }

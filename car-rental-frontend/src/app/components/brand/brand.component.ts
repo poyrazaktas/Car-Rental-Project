@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Brand } from '../../models/brand';
-import { BrandService } from 'src/app/services/brand.service';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Brand} from '../../models/brand';
+import {BrandService} from 'src/app/services/brand.service';
 
 @Component({
   selector: 'app-brand',
@@ -11,14 +11,16 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   isDataLoaded = false;
-  currentBrand: Brand;
   filterText = '';
-  constructor(private brandService: BrandService) {}
+
+  constructor(private brandService: BrandService) {
+  }
 
   ngOnInit(): void {
     this.getBrands();
   }
 
+  // tslint:disable-next-line:typedef
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data;
@@ -26,8 +28,8 @@ export class BrandComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   setCurrentBrand(brand: Brand) {
-    this.currentBrand = brand;
-    console.log(this.currentBrand.name);
+    this.brandService.setCurrentBrand(brand);
   }
 }

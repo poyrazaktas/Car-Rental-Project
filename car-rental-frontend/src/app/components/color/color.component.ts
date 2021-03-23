@@ -25,4 +25,8 @@ export class ColorComponent implements OnInit {
       this.isDataLoaded = true;
     });
   }
+
+  setCurrentColor(color: Color) {
+    this.colorService.setCurrentColor(color);
+  }
 }

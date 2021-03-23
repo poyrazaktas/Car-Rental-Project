@@ -7,7 +7,7 @@ import { Customer } from '../models/customer';
   providedIn: 'root',
 })
 export class CustomerService {
-  apiUrl: string = 'https://localhost:44324/api/customers/all';
+  apiUrl= 'https://localhost:44324/api/customers/all';
   constructor(private httpClient: HttpClient) {}
   getCustomers(): Observable<ListResponseModel<Customer>> {
     return this.httpClient.get<ListResponseModel<Customer>>(this.apiUrl);

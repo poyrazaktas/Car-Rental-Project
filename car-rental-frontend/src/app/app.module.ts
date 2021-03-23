@@ -12,7 +12,7 @@ import {RentalComponent} from './components/rental/rental.component';
 import {NaviComponent} from './components/navi/navi.component';
 import {CategoryComponent} from './components/category/category.component';
 import {CarDetailComponent} from './components/car-detail/car-detail.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FilterBrandsPipe} from './pipes/filter-brands.pipe';
 import {FilterColorsPipe} from './pipes/filter-colors.pipe';
 import {FilterCarsPipe} from './pipes/filter-cars.pipe';
@@ -22,7 +22,13 @@ import {NgImageSliderModule} from 'ng-image-slider';
 import {RentACarComponent} from './components/rent-a-car/rent-a-car.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
-import { PaymentComponent } from './components/payment/payment.component';
+import {PaymentComponent} from './components/payment/payment.component';
+import {BrandAddComponent} from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +48,19 @@ import { PaymentComponent } from './components/payment/payment.component';
     FilterCarColorsPipe,
     RentACarComponent,
     PaymentComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    CarAddComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent,
+    CarUpdateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgImageSliderModule,
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgImageSliderModule,
     BrowserAnimationsModule, ToastrModule.forRoot(
-    {
-      positionClass: 'toast-bottom-right',
-    }
-  )],
+      {
+        positionClass: 'toast-bottom-right',
+      }
+    )],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,5 @@
 <div *ngIf="isDataLoaded == false" class="d-flex justify-content-center">
-  <div class="spinner-border text-primary" style="width: 10rem; height: 10rem"  role="status">
+  <div class="spinner-border text-primary" style="width: 10rem; height: 10rem" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
@@ -16,16 +16,27 @@
     <tr>
       <th>Id</th>
       <th>Brand</th>
+      <th></th>
     </tr>
     </thead>
-
+    <tbody>
     <tr
       *ngFor="let brand of brands | filterBrands:filterText"
-      (click)="setCurrentBrand(brand)"
       routerLink="/cars/brand/{{ brand.id }}"
     >
       <td>{{ brand.id }}</td>
       <td>{{ brand.name }}</td>
+      <td>
+        <button type="button" class="btn btn-primary"
+                (click)="setCurrentBrand(brand)"
+                routerLink="/brands/update/{{brand.id}}">Güncelle
+        </button>
+      </td>
     </tr>
+    </tbody>
   </table>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button" routerLink="/brands/add">Marka Ekle</button>
+  </div>
 </div>
+

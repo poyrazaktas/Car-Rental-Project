@@ -8,6 +8,12 @@ import {CustomerComponent} from './components/customer/customer.component';
 import {RentalComponent} from './components/rental/rental.component';
 import {RentACarComponent} from './components/rent-a-car/rent-a-car.component';
 import {PaymentComponent} from './components/payment/payment.component';
+import {BrandAddComponent} from './components/brand-add/brand-add.component';
+import {ColorAddComponent} from './components/color-add/color-add.component';
+import {CarAddComponent} from './components/car-add/car-add.component';
+import {BrandUpdateComponent} from './components/brand-update/brand-update.component';
+import {ColorUpdateComponent} from './components/color-update/color-update.component';
+import {CarUpdateComponent} from './components/car-update/car-update.component';
 
 const routes: Routes = [
   {
@@ -55,7 +61,32 @@ const routes: Routes = [
   {
     path: 'payment',
     component: PaymentComponent
+  },
+  {
+    path: 'brands/add',
+    component: BrandAddComponent
+  },
+  {
+    path: 'colors/add',
+    component: ColorAddComponent
+  },
+  {
+    path: 'cars/add',
+    component: CarAddComponent
+  },
+  {
+    path: 'brands/update/:brandId',
+    component: BrandUpdateComponent
+  },
+  {
+    path: 'colors/update/:colorId',
+    component: ColorUpdateComponent,
+  },
+  {
+    path: 'cars/update/:carId',
+    component: CarUpdateComponent
   }
+
 ];
 
 @NgModule({

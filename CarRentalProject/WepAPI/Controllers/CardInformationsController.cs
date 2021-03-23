@@ -49,6 +49,6 @@ namespace WepAPI.Controllers
     public class MyCard : Card
     {
         public static CardInformation cardInformation = new CardInformation() { CardId = "1234567890", CardCvc = "123" };
-        public static int Balance = 1000;
+        public static int Balance = 2000;
     }
 }

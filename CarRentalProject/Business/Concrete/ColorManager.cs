@@ -50,8 +50,8 @@ namespace Business.Concrete
 
         private IResult CheckIfColorExists(string colorName)
         {
-            var result = _colorDal.GetAll(c => c.Name == colorName);
-            if (result == null)
+            var result = _colorDal.GetAll(c => c.Name == colorName).Any();
+            if (result)
             {
                 return new ErrorResult(Messages.ErrorColorExists);
             }

@@ -17,7 +17,6 @@ export class CarComponent implements OnInit {
   brands: Brand[];
   colors: Color[];
   isDataLoaded = false;
-  currentCar: Car;
   currentBrand: Brand;
   currentColor: Color;
   filterText = '';
@@ -71,7 +70,7 @@ export class CarComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   setCurrentCar(car: Car) {
-    this.currentCar = car;
+    this.carService.setCurrentCar(car);
   }
 
   // tslint:disable-next-line:typedef
@@ -80,11 +79,13 @@ export class CarComponent implements OnInit {
       this.brands = response.data;
     });
   }
+
   // tslint:disable-next-line:typedef
   getColors() {
     this.colorService.getColors().subscribe((response) => {
       this.colors = response.data;
     });
   }
+
   // pipe yazılır : filter
 }
