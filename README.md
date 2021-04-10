@@ -53,6 +53,7 @@
     <li>14. Gün ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/CarImageManager.cs">CarImageManager</a> ekleme (Add) metoduna eklendi.</li>
     <li>15. Gün ödevine ilişkin Cache, CacheRemove, TransactionScope ve Performance Aspectleri eklendi.</li>
     <li>20. Gün ödevine ilişkin Core katmanında Extensionsa Error Middleware eklenmiştir.</li>
+    <li>21. Gün ödevine ilişkin gerekli fake servisler eklendi. Ayrıca kullanıcı bilgi güncelleme, kullanıcı kaydında "user" operation claim'i eklenmesine ilişkin gerekli backend kodları yazıldı.</li>
     <li> Postman de yapılan bazı istekler:
         <h2><b>Yeni İstekler</b> 13. ve 15.Gün Ödevi</h2>
         <ul>SecuredOperation Aspecti olan metotlar için kullanıcının ilk önce register ve login olması, loginden alınan tokenin ilgili metoda Authorization'ı Bearer Token olarak vermesi gerekir.
@@ -122,6 +123,7 @@
     <li>19. Gün ödevine ilişkin pipe ile filtreleme işlemleri tamamlandı. Seçilen arabanın kiralanma imkanı, fake banka servisi eklendi ve toastr ile bilgilendirme eklendi.</li>
     <li>19. Gün ödevine ilişikin yazılan fake banka servisi, <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/WepAPI/Controllers/CardInformationsController.cs">CardInformationsController'</a> da bulunmaktadır. Kullanıcı 1000 liralık bakiyesini bir oturumda dilediği gibi harcayabilir. </li>
     <li>20. Gün ödevine ilişkin Reactive Formlarla araba, renk, marka ekleme desteği getirilmiştir.</li>
+    <li>21. Gün ödevine ilişkin Findex Service, LocalStorageService gibi servisler yazıldı. Kullanıcının kayıt olabileceği, bilgilerini güncelleyebileceği özellikler eklendi.</li>
   </ul>
 </h4>
 
@@ -327,3 +329,16 @@ RentACar projeniz için:
 2. Reactive Forms kullanarak Brand, Color, Car Ekleme sayfalarını oluşturunuz.✓
 3. Brand,Color,Car listesinde güncelleme butonu ekleyiniz. Tıklanan ilgili elemanın detay sayfasına yönlendirerek güncelleme imkanı veriniz.✓
 4. Toast desteği veriniz.✓
+
+## Ödev 21
+
+1. Login/Register yetenekleri getiriniz.✓
+2. Kiralama esnasında müşterinin findeks puanını sorgulayacak sahte servis ekleyiniz.✓
+3. Findeks puan aralığı 0-1900 arasındadır.✓
+4. Araçların kiralanabilmesi için her aracın ayrı ayrı minimum findeks puanı olmalıdır. Bu puanı olmayan müşteriler araç kiralayamaz.✓
+5. LocalStorage için servis yazınız. Ekleme/Getirme/Silme✓
+6. Giriş ve register için nav'a butonlar ekleyiniz.✓
+7. Eğer giriş yapılmamışsa nav'da bu butonlar olsun. Giriş yapılmışsa bu butonlar yerine müşteri adı ex: "Engin Demiroğ" yazsın.✓
+8. Kullanıcı adını yazdığınız kısım açılır kutu olmalı.✓
+9. Kullanıcı bilgilerini görüp güncelleyebilmelidir.✓
+10. Kredi kartıyla ödeme alındığında kullanıcıya kredi kartını kaydedelim mi? Sorusu yöneltiniz. Kaydetmek isteyen müşteriye sonraki ödemede kayıtlı kredi kartını gösteriniz.

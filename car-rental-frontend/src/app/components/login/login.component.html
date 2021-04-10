@@ -1,0 +1,28 @@
+<body class="text-center">
+
+<main class="form-signin">
+  <form [formGroup]="loginForm">
+    <h1 class="h3 mb-3 fw-normal">Lütfen giriş yapınız.</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+      <label for="email">Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Parola"
+             formControlName="password">
+      <label for="floatingPassword">Parola</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Beni Hatırla
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" (click)="login()">Giriş Yap</button>
+    <p class="mt-5 mb-3 text-muted" routerLink="/register">Hala kayıt olmadın mı?</p>
+  </form>
+</main>
+
+
+</body>

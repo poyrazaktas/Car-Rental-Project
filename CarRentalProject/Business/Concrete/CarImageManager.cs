@@ -44,6 +44,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageUpdated);
         }
 
+        [SecuredOperation("admin")]
         public IResult Delete(CarImage carImage)
         {
             var result = Rules.Run(CheckIfDataExists());

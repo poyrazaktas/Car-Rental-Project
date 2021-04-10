@@ -1,0 +1,28 @@
+<body class="text-center">
+
+<main class="form-signup">
+  <form [formGroup]="registerForm">
+    <h1 class="h3 mb-3 fw-normal">Lütfen kayıt olunuz.</h1>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Ad">
+      <label for="firstName">Ad</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Soyad">
+      <label for="lastName">Soyad</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+      <label for="email">Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Parola"
+             formControlName="password">
+      <label for="floatingPassword">Parola</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" (click)="register()">Kayıt Ol</button>
+    <p class="mt-5 mb-3 text-muted">&copy; poyrazaktas</p>
+  </form>
+</main>
+
+</body>

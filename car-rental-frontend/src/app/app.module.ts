@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -24,11 +24,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {PaymentComponent} from './components/payment/payment.component';
 import {BrandAddComponent} from './components/brand-add/brand-add.component';
-import { ColorAddComponent } from './components/color-add/color-add.component';
-import { CarAddComponent } from './components/car-add/car-add.component';
-import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
-import { ColorUpdateComponent } from './components/color-update/color-update.component';
-import { CarUpdateComponent } from './components/car-update/car-update.component';
+import {ColorAddComponent} from './components/color-add/color-add.component';
+import {CarAddComponent} from './components/car-add/car-add.component';
+import {BrandUpdateComponent} from './components/brand-update/brand-update.component';
+import {ColorUpdateComponent} from './components/color-update/color-update.component';
+import {CarUpdateComponent} from './components/car-update/car-update.component';
+import {LoginComponent} from './components/login/login.component';
+import {AuthInterceptor} from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +58,9 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+    CustomerDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgImageSliderModule,
     BrowserAnimationsModule, ToastrModule.forRoot(
@@ -61,7 +68,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
         positionClass: 'toast-bottom-right',
       }
     )],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {

@@ -1,0 +1,44 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Profili Düzenle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="userUpdateForm">
+          <div class="mb-3">
+            <label for="firstName">Kullanıcı İsim</label>
+            <input type="text" id="firstName" formControlName="firstName"
+                   class="form-control" placeholder="{{customer.firstName}}">
+          </div>
+          <div class="mb-3">
+            <label for="lastName">Kullanıcı Soyisim</label>
+            <input type="text" id="lastName" formControlName="lastName"
+                   class="form-control" placeholder="{{customer.lastName}}">
+          </div>
+          <div class="mb-3">
+            <label for="email">Kullanıcı Email</label>
+            <input type="text" id="email" formControlName="email"
+                   class="form-control" placeholder="{{customer.email}}">
+          </div>
+          <div class="mb-3">
+            <label for="email">Kullanıcı Şifre</label>
+            <input type="password" id="password" formControlName="password"
+                   class="form-control">
+          </div>
+        </form>
+        <form [formGroup]="customerUpdateForm">
+          <div class="mb-3">
+            <label for="firstName">Kullanıcı Şirket</label>
+            <input type="text" id="companyName" formControlName="companyName"
+                   class="form-control" placeholder="{{customer.companyName}}">
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="update()">Güncelle</button>
+      </div>
+    </div>
+  </div>
+</div>

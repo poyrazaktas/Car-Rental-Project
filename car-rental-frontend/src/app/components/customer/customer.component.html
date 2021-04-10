@@ -8,15 +8,21 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
+        <th>CustomerId</th>
         <th>UserId</th>
-        <th>CompanyName</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Company Name</th>
       </tr>
     </thead>
 
     <tr *ngFor="let customer of customers">
-      <td>{{ customer.id }}</td>
+      <td>{{ customer.customerId }}</td>
       <td>{{ customer.userId }}</td>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
+      <td>{{ customer.email }}</td>
       <td>{{ customer.companyName }}</td>
     </tr>
   </table>

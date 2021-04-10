@@ -32,10 +32,10 @@ namespace WepAPI.Controllers
             var result = _authService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("register")]
@@ -44,17 +44,17 @@ namespace WepAPI.Controllers
             var userExists = _authService.UserExists(userForRegisterDto.Email);
             if (!userExists.Success)
             {
-                return BadRequest(userExists.Message);
+                return BadRequest(userExists);
             }
 
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             var result = _authService.CreateAccessToken(registerResult.Data);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
     }
 }

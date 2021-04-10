@@ -24,7 +24,6 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentRental = this.rentalService.getCurrentRental();
-    console.log(this.currentRental);
   }
 
   // tslint:disable-next-line:typedef
@@ -45,7 +44,6 @@ export class PaymentComponent implements OnInit {
     const price = this.currentRental.carDailyPrice * Math.abs(
       new Date(this.currentRental.returnDate).getDate() -
       new Date(this.currentRental.rentDate).getDate());
-    console.log(price);
     this.bankService.pay(price).subscribe((response) => {
       this.toastrService.success(response.message);
       this.rentACar();

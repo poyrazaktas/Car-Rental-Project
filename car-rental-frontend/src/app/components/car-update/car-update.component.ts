@@ -21,7 +21,6 @@ export class CarUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentCar = this.getCurrentCar();
-    console.log(this.currentCar);
     this.createCarUpdateForm();
   }
 
@@ -41,7 +40,6 @@ export class CarUpdateComponent implements OnInit {
     this.carService.updateCar(carModel).subscribe((response) => {
       this.toastrService.success(response.message);
     }, responseError => {
-      console.log(responseError);
       this.toastrService.error(responseError.error.message);
     });
   }

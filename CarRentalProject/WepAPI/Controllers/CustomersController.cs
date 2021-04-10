@@ -31,6 +31,28 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getByMail")]
+        public IActionResult GetCustomer(string email)
+        {
+            var result = _customerService.GetCustomerDetailByMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("details")]
+        public IActionResult GetCustomerDetails()
+        {
+            var result = _customerService.GetCustomerDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Customer customer)
         {

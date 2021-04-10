@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
+using Core.Utils.Security.Hashing;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,17 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("claims")]
+        public IActionResult GetUserClaims(User user)
+        {
+            var result = _userService.GetClaims(user);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(User user)
         {
@@ -44,8 +56,20 @@ namespace WepAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(User user)
+        public IActionResult Update(UserModel userModel)
         {
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(userModel.Password, out passwordHash, out passwordSalt);
+            var user = new User
+            {
+                Id = userModel.Id,
+                FirstName = userModel.FirstName,
+                LastName = userModel.LastName,
+                Email = userModel.Email,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Status = true
+            };
             var result = _userService.Update(user);
             if (result.Success)
             {

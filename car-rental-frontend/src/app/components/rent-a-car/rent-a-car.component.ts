@@ -5,6 +5,9 @@ import {CarService} from '../../services/car.service';
 import {Car} from '../../models/car';
 import {Rental} from '../../models/rental';
 import {ToastrService} from 'ngx-toastr';
+import {CustomerService} from '../../services/customer.service';
+import {FindexService} from '../../services/findex.service';
+import {LocalStorageService} from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-rent-a-car',
@@ -21,9 +24,12 @@ export class RentACarComponent implements OnInit {
 
   constructor(private rentalService: RentalService,
               private carService: CarService,
+              private customerService: CustomerService,
               private activatedRoute: ActivatedRoute,
-              private  toastrService: ToastrService,
-              private  router: Router) {
+              private toastrService: ToastrService,
+              private findexService: FindexService,
+              private localStorageService: LocalStorageService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -34,6 +40,12 @@ export class RentACarComponent implements OnInit {
         console.log('Not a valid request!');
       }
     });
+    const carFindexScore = this.findexService.getFindexScore();
+    if (carFindexScore > this.findexService.customerFindexScore) {
+      this.toastrService.error('Kullanıcı findeks puanı : ' + this.findexService.customerFindexScore +
+        '\nBu arabayı kiralamak için yetersiz!\nAraba findex puanı : ' + carFindexScore);
+      this.router.navigate(['cars']);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -48,11 +60,12 @@ export class RentACarComponent implements OnInit {
   createRental() {
     this.rentalService.checkIfCarReturned(this.currentCar.carId).subscribe((response) => {
       this.rental.carId = this.currentCar.carId;
-      this.rental.customerId = 5;
+      this.rental.customerId = this.customerService.getCurrentUser().customerId;
       this.rental.rentDate = this.rentDate;
       this.rental.returnDate = this.returnDate;
       this.rental.carDailyPrice = this.currentCar.carDailyPrice;
       this.rentalService.setCurrentRental(this.rental);
+      console.log(this.rental);
       this.toastrService.success('Ödeme sayfasına yönlendiriliyorsunuz.', 'İstek Başarılı');
       this.router.navigateByUrl('/payment');
     }, error => {

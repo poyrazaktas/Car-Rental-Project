@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utils.Results;
+using Core.Utils.Security.Hashing;
 using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
@@ -41,9 +42,9 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserUpdated);
         }
 
-        public List<OperationClaim> GetClaims(User user)
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
-            return _userDal.GetClaims(user);
+            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
         }
 
         public User GetByMail(string email)

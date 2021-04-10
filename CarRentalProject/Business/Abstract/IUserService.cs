@@ -10,7 +10,7 @@ namespace Business.Abstract
     {
         IDataResult<List<User>> GetAll();
 
-        List<OperationClaim> GetClaims(User user);
+        IDataResult<List<OperationClaim>> GetClaims(User user);
 
         User GetByMail(string email);
 

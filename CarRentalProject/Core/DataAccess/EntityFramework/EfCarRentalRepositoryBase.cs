@@ -9,8 +9,8 @@ using System.Text;
 namespace Core.DataAccess.EntityFramework
 {
     public class EfCarRentalRepositoryBase<TEntity, TContext>
-        where TEntity: class,IEntity,new()
-        where TContext: DbContext, new()
+        where TEntity : class, IEntity, new()
+        where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
         {

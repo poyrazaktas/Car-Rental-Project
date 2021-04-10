@@ -52,6 +52,12 @@ export class CarDetailComponent implements OnInit {
           thumbImage: 'https://localhost:44324/uploads/' + carDetail.imageName
         });
       }
+    }, error => {
+      this.carImages.push({
+        image: 'https://i.hizliresim.com/OLvbq4.jpg',
+        thumbImage: 'https://i.hizliresim.com/OLvbq4.jpg'
+      });
+      this.isDataLoaded = true;
     });
   }
 

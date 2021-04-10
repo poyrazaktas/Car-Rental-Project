@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Transaction;
@@ -25,6 +26,7 @@ namespace Business.Concrete
         }
 
         //[TransactionScopeAspect]
+        [SecuredOperation("user")]
         public IResult Add(Rental rental)
         {
             var result = Rules.Run(CheckIfCarReturned(rental.CarId));
@@ -36,6 +38,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalAdded);
         }
 
+        [SecuredOperation("admin")]
         public IResult Delete(Rental rental)
         {
             _rentalDal.Delete(rental);
@@ -52,6 +55,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(), Messages.RentalsListed);
         }
 
+        [SecuredOperation("user")]
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);

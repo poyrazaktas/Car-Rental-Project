@@ -4,6 +4,7 @@ using Core.Entities.Concrete;
 using Core.Utils.Results;
 using Core.Utils.Security.Hashing;
 using Core.Utils.Security.JWT;
+using Entities.Concrete;
 using Entities.DTOs;
 
 namespace Business.Concrete
@@ -11,12 +12,16 @@ namespace Business.Concrete
     public class AuthManager : IAuthService
     {
         private IUserService _userService;
+        private ICustomerService _customerService;
+        private IUserOperationClaimService _userOperationClaimService;
         private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
+        public AuthManager(IUserService userService, ICustomerService customerService, IUserOperationClaimService userOperationClaimService, ITokenHelper tokenHelper)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
+            _customerService = customerService;
+            _userOperationClaimService = userOperationClaimService;
         }
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
@@ -33,6 +38,8 @@ namespace Business.Concrete
                 Status = true
             };
             _userService.Add(user);
+            _customerService.Add(new Customer { UserId = user.Id });
+            _userOperationClaimService.Add(new UserOperationClaim { UserId = user.Id, OperationClaimId = 3 });
             return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 
@@ -63,7 +70,7 @@ namespace Business.Concrete
 
         public IDataResult<AccessToken> CreateAccessToken(User user)
         {
-            var claims = _userService.GetClaims(user);
+            var claims = _userService.GetClaims(user).Data;
             var accessToken = _tokenHelper.CreateToken(user, claims);
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
