@@ -1,23 +1,25 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {ListResponseModel} from 'src/app/models/listResponseModel';
-import {Color} from '../models/color';
-import {ResponseModel} from '../models/responseModel';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { Color } from '../models/color';
+import { ResponseModel } from '../models/responseModel';
+import { AppSettings } from '../app-settings';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ColorService {
-  apiUrl = 'https://localhost:44324/api/';
+  apiUrl = AppSettings.API_ENDPOINT;
   private currentColor: Color;
 
-  constructor(private htppClient: HttpClient) {
-  }
+  constructor(private htppClient: HttpClient) {}
 
   getColors(): Observable<ListResponseModel<Color>> {
     const extension = 'colors/all';
-    return this.htppClient.get<ListResponseModel<Color>>(this.apiUrl + extension);
+    return this.htppClient.get<ListResponseModel<Color>>(
+      this.apiUrl + extension
+    );
   }
 
   addColor(color: Color): Observable<ResponseModel> {

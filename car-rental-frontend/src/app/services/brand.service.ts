@@ -1,20 +1,20 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import {Observable} from 'rxjs';
-import {ListResponseModel} from '../models/listResponseModel';
-import {Brand} from '../models/brand';
-import {ResponseModel} from '../models/responseModel';
+import { Observable } from 'rxjs';
+import { ListResponseModel } from '../models/listResponseModel';
+import { Brand } from '../models/brand';
+import { ResponseModel } from '../models/responseModel';
+import { AppSettings } from '../app-settings';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BrandService {
-  apiUrl = 'https://localhost:44324/api/';
+  apiUrl = AppSettings.API_ENDPOINT;
   private currentBrand: Brand;
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getBrands(): Observable<ListResponseModel<Brand>> {
     const extension = 'brands/all';

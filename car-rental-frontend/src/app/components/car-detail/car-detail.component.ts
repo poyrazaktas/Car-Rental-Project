@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {CarDetail} from 'src/app/models/carDetail';
-import {CarDetailService} from 'src/app/services/car-detail.service';
-import {RentalService} from '../../services/rental.service';
-import {CarService} from '../../services/car.service';
-import {ToastrService} from 'ngx-toastr';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CarDetail } from 'src/app/models/carDetail';
+import { CarDetailService } from 'src/app/services/car-detail.service';
+import { RentalService } from '../../services/rental.service';
+import { CarService } from '../../services/car.service';
+import { ToastrService } from 'ngx-toastr';
+import { AppSettings } from 'src/app/app-settings';
 
 @Component({
   selector: 'app-car-detail',
@@ -22,12 +23,11 @@ export class CarDetailComponent implements OnInit {
 
   constructor(
     private carDetailService: CarDetailService,
-    private  rentalService: RentalService,
-    private  toastrService: ToastrService,
+    private rentalService: RentalService,
+    private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
-    public  router: Router,
-  ) {
-  }
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -42,25 +42,25 @@ export class CarDetailComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   getCarDetails(carId: number) {
-    this.carDetailService.getCarDetails(carId).subscribe((response) => {
-      this.carDetails = response.data;
-      this.message = response.message;
-      this.isDataLoaded = true;
-      for (const carDetail of this.carDetails) {
+    this.carDetailService.getCarDetails(carId).subscribe(
+      (response) => {
+        this.carDetails = response.data;
+        this.message = response.message;
+        this.isDataLoaded = true;
+        for (const carDetail of this.carDetails) {
+          this.carImages.push({
+            image: AppSettings.API_UPLOADS + carDetail.imageName,
+            thumbImage: AppSettings.API_UPLOADS + carDetail.imageName,
+          });
+        }
+      },
+      (error) => {
         this.carImages.push({
-          image: 'https://localhost:44324/uploads/' + carDetail.imageName,
-          thumbImage: 'https://localhost:44324/uploads/' + carDetail.imageName
+          image: 'https://i.hizliresim.com/OLvbq4.jpg',
+          thumbImage: 'https://i.hizliresim.com/OLvbq4.jpg',
         });
+        this.isDataLoaded = true;
       }
-    }, error => {
-      this.carImages.push({
-        image: 'https://i.hizliresim.com/OLvbq4.jpg',
-        thumbImage: 'https://i.hizliresim.com/OLvbq4.jpg'
-      });
-      this.isDataLoaded = true;
-    });
+    );
   }
-
-
 }
-
