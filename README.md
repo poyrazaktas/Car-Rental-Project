@@ -25,6 +25,10 @@ Backend ve Frontend' in ilgili **README** dosyası proje dizinlerinde bulunmakta
 
 ![Uygulama içinden fotoğraflar](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/Ekler/running_project.gif?raw=true)
 
+## Varlık İlişki Diyagramı (ER Diagram)
+
+![ER Diagram](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/Ekler/ER.png?raw=true)
+
 ## Proje Gereksinimleri
 
 - .Net Core v3.1+
