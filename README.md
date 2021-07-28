@@ -1,35 +1,38 @@
-# Araba Kiralama Projesi
+# Car Rental Project
 
-Bu proje kapsamında bir Araba Kiralama sisteminin backendini ASP.Net Core, frontendini ise Angular kullanarak simüle ettim. Amacım bu simülasyonu gerçeklerken SOLID kod yazma prensiplerine uymak ve n-Layered Architecture kullanarak proje ölçeklenebilirliğini arttırmaktı. Motivasyonum ise [kodlama.io](https://www.kodlama.io/)'da katıldığım C# + Angular Kampının ödevlerini tamamlamaktı.
+***You can read this file in [Turkish](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.tr-TR.md)***
 
-Yazdığım proje Engin Demiroğ ve veya ekibi tarafından gözden geçirilmiş olup [onaylanmıştır](https://www.kodlama.io/p/gururtablosu).
+In this project, I simulated the back-end of a Car Rental system using ASP.Net Core and the front-end using Angular. My aim was to comply with SOLID coding principles while performing this simulation and to increase project scalability using n-Layered Architecture. My motivation was to complete the C# & Angular boot camp assignments I attended [kodlama.io](https://www.kodlama.io/). 
 
-Backend ve Frontend' in ilgili **README** dosyası proje dizinlerinde bulunmaktadır.
+The project I wrote has been reviewed and [approved](https://www.kodlama.io/p/gururtablosu) by the instructor or his team.
 
-## Proje Çalıştırma Adımları
+## You can read the **README** files inside the backend and frontend directory.
 
-1. İlk önce [backend solution](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/CarRentalProject/CarRental.sln)' u açılır.
-2. IIS Express olarak çalıştırılır. 
-   - IIS Express çalışırken farklı bilgisayarlarda farklı portlar seçebilmektedir. Dolayısıyla eğer port numarası `localhost:44324` farklı çıkıyorsa Angular' da bu değişiklik [app-settings.ts](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/car-rental-frontend/src/app/app-settings.ts) üzerinden yapılır.
-3. [Frontend dizini](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend)'ne gidilir ve uygulama çalıştırılır:
+### [Backend](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/CarRentalProject)
+### [Frontend](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend)
+
+
+## How to open this project 
+
+1. First of all, you need to open [backend solution](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/CarRentalProject/CarRental.sln).
+2. Run ASP.Net Core project with IIS Express. 
+   - While IIS Express is running, it can select different ports on different computers. Therefore, if the port number `localhost:44324` is different, in Angular, this change is made via  [app-settings.ts](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/car-rental-frontend/src/app/app-settings.ts).
+
+3. Navigate to the [front-end directory](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend) and run the project.
    ```
    cd car-rental-frontend
    ng serve --open
    ```
 
-## [Backend](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/CarRentalProject)
-## [Frontend](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend)
+## Screenshots from the app      
 
+![Screenshots from the app](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/Ekler/running_project.gif?raw=true)
 
-## Uygulamadan Görüntüler
-
-![Uygulama içinden fotoğraflar](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/Ekler/running_project.gif?raw=true)
-
-## Varlık İlişki Diyagramı (ER Diagram)
+## Entity Relation Diagram
 
 ![ER Diagram](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/Ekler/ER.png?raw=true)
 
-## Proje Gereksinimleri
+## Requirements
 
 - .Net Core v3.1+
 - SQL Server 13.0+
