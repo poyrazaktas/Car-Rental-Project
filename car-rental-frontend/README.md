@@ -1,25 +1,25 @@
-# Araba Kiralama Projesi Frontend
+# Car Rental Project - Frontend
 
-Bu proje [Angular CLI](https://github.com/angular/angular-cli) versiyon 11.2.4 ile oluşturulmuştur.
+***You can read this file in [Turkish](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/car-rental-frontend/README.tr-TR.md)***
 
-## Giriş
+This project was created with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
-Bu projede backendini Asp.net Core versiyon 3.1 ile geliştirdiğim araba kiralama simülasyonunun kullanıcı arayüzünü oluşturdum. Bu arayüzü oluştururken [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) ve Angular framework' unun çeşitli özelliklerinden yararlandım. Yararlandığım özellikler ve uygulama ağacı aşağıdaki gibidir:
+## Introduction
 
-1. Backende yapılan istekler [services](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/services) dizini altında,
-2. İstekleri karşılayacak model sınıfları [models](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/models) dizini altında,
-3. Her bileşene ait istekler o bileşenin `component.ts` dosyasında her bileşenin arayüzü ise o bileşenin `component.html` dosyasında bulunmaktadır. Bu bileşenler [components](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/components) dizini altında,
-4. Bazı bileşenlere ait veri filtrelemelerinin ve dönüşümleri [pipes](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/pipes) dizini altında,
-5. Bazı bileşenleri kullanıcı girişi olmadan görüntülenmesine izin vermeyen sınıflar [guards](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/guards) dizini altında,
-6. Yapılan isteklerin başlık kısmına Bearer Token ilavesiyle yetkilendirme veren sınıfı [interceptors](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/interceptors) dizini altında bulunmaktadır.    
+In this project, I created the user interface of the car rental simulation that I developed its back-end with Asp.net Core version 3.1. While creating this interface, I benefited from various features of [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) and Angular framework. The features I benefited from and the application tree are as follows: 
 
+1. All backend requests under the [services](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/services) directory
+2. The model classes for each response at the [models](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/models) directory
+3. [Components](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/components) directory
+4. Data filters and transformations of some components are under the [pipes](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/pipes) directory
+5.  [Guards](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/guards) directory
+6. [Interceptors](https://github.com/poyrazaktas/Car-Rental-Project/tree/master/car-rental-frontend/src/app/interceptors) directory
 
-## Çalıştırma Adımları
+## How to run this project
 
-1. Eğer backend farklı bir portta çalışıyorsa [README](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.md#proje-%C3%A7al%C4%B1%C5%9Ft%C4%B1rma-ad%C4%B1mlar%C4%B1) belirtilen güncelleme yapılması gerekir.
-2. `npm install` ile projenin bağımlılıkları indirilir.
-3. `ng serve` ile sunucu çalıştırılır. `http://localhost:4200/` gidilir.(*opsiyonel*)
-4. `ng serve --open` ile proje sistemin varsayılan tarayıcısı üzerinden çalıştırılır.(*opsiyonel*)
-
-
-
+1. If the backend works on a different port as I was said at [README](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.md#proje-%C3%A7al%C4%B1%C5%9Ft%C4%B1rma-ad%C4%B1mlar%C4%B1) you need to ensure that you changed API endpoints in this [file](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/car-rental-frontend/src/app/app-settings.ts)
+2. And run the following commands:
+```shell
+npm install
+ng serve --open 
+```
