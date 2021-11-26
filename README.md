@@ -1,7 +1,5 @@
 # Car Rental Project
 
-***You can read this file in [Turkish](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.tr-TR.md)***
-
 In this project, I simulated the back-end of a Car Rental system using ASP.Net Core and the front-end using Angular. My aim was to comply with SOLID coding principles while performing this simulation and to increase project scalability using n-Layered Architecture. My motivation was to complete the C# & Angular boot camp assignments I attended [kodlama.io](https://www.kodlama.io/). 
 
 The project I wrote has been reviewed and [approved](https://www.kodlama.io/p/gururtablosu) by the instructor or his team.

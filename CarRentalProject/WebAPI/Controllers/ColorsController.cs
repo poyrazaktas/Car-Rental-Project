@@ -5,26 +5,25 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace WepAPI.Controllers
+namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandsController : ControllerBase
+    public class ColorsController : ControllerBase
     {
-        private IBrandService _brandService;
+        private IColorService _colorService;
 
-        public BrandsController(IBrandService brandService)
+        public ColorsController(IColorService colorService)
         {
-            _brandService = brandService;
+            _colorService = colorService;
         }
 
         [HttpGet("all")]
         public IActionResult GetAll()
         {
-            var result = _brandService.GetAll();
+            var result = _colorService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -33,9 +32,9 @@ namespace WepAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Brand brand)
+        public IActionResult Add(Color color)
         {
-            var result = _brandService.Add(brand);
+            var result = _colorService.Add(color);
             if (result.Success)
             {
                 return Ok(result);
@@ -44,9 +43,9 @@ namespace WepAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Brand brand)
+        public IActionResult Update(Color color)
         {
-            var result = _brandService.Update(brand);
+            var result = _colorService.Update(color);
             if (result.Success)
             {
                 return Ok(result);
@@ -55,9 +54,9 @@ namespace WepAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Brand brand)
+        public IActionResult Delete(Color color)
         {
-            var result = _brandService.Delete(brand);
+            var result = _colorService.Delete(color);
             if (result.Success)
             {
                 return Ok(result);

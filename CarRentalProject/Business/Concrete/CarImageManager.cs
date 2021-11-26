@@ -57,13 +57,13 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<List<CarImage>> GetAllByCarId(int carId)
+        public IDataResult<List<CarImage>> GetAllByCarId(int carId, string defaultCarImagePath)
         {
             var result = Rules.Run(CheckIfCarImageExists(carId));
             if (result != null)
             {
                 return new ErrorDataResult<List<CarImage>>(new List<CarImage> {
-                    new CarImage {Id=404, ImageName="DefaultImage", CarId = carId, Date = DateTime.Now, ImagePath = Paths.DefaultCarImage}}, result.Message);
+                    new CarImage {Id=404, ImageName="DefaultImage", CarId = carId, Date = DateTime.Now, ImagePath = defaultCarImagePath}}, result.Message);
             }
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(image => image.CarId == carId), Messages.CarImagesListed);
         }

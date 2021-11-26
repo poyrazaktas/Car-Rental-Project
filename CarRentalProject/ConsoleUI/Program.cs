@@ -44,7 +44,7 @@ namespace ConsoleUI
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
             var result = rentalManager.GetRentalDetails();
-            Console.WriteLine("İsim Soyisim\tMarka\t\tGünlük Kira\tKiralama Tarihi\t\tİade Tarihi\n");
+            Console.WriteLine("Name surname\tBrand\t\tDaily Rental\tRental Date\t\tReturn Date\n");
             foreach (var rentalDetail in result.Data)
             {
                 Console.WriteLine(rentalDetail.CustomerFirstName + " " +
@@ -58,9 +58,9 @@ namespace ConsoleUI
         private static void CarDeleteTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.Delete(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 200, ModelYear = 2018, Description = "Kocaeli - İstanbul / Günlük 200 TL Kiralik Mazda 3" });
+            var result = carManager.Delete(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 200, ModelYear = 2018, Description = "Kocaeli - Istanbul / Mazda 3 for Rent 200 TL per day" });
             Console.WriteLine(result.Message);
-            Console.WriteLine("Araba\tRenk\tGünlük Kirası\tAçıklama\n");
+            Console.WriteLine("Car\tColour\tDaily Rental\texplanation\n");
             foreach (var carDetail in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine(carDetail.BrandName + "\t" + carDetail.CarColor
@@ -71,9 +71,9 @@ namespace ConsoleUI
         private static void CarUpdateTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.Update(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 200, ModelYear = 2018, Description = "Kocaeli - İstanbul / Günlük 200 TL Kiralik Mazda 3" });
+            var result = carManager.Update(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 200, ModelYear = 2018, Description = "Kocaeli - Istanbul / Mazda 3 for Rent 200 TL per day" });
             Console.WriteLine(result.Message);
-            Console.WriteLine("Araba\tRenk\tGünlük Kirası\tAçıklama\n");
+            Console.WriteLine("Car\tColour\tDaily Rental\texplanation\n");
 
             foreach (var carDetail in carManager.GetCarDetails().Data)
             {
@@ -85,10 +85,10 @@ namespace ConsoleUI
         private static void CarAddToDbTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.Add(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 110, ModelYear = 2004, Description = "Kocaeli - İstanbul / Günlük 100 TL Kiralik Mazda 3" });
-            //Başarılı veya başarısız olmasına göre mesajını merak ettiğim için
+            var result = carManager.Add(new Car { Id = 7, BrandId = 27, ColorId = 3, DailyPrice = 110, ModelYear = 2004, Description = "Kocaeli - Istanbul / Mazda 3 for Rent 100 TL per day" });
+            //As I was wondering about your message according to whether it was successful or unsuccessful.
             Console.WriteLine(result.Message);
-            Console.WriteLine("Araba\tRenk\tGünlük Kirası\tAçıklama\n");
+            Console.WriteLine("Car\tColour\tDaily Rental\texplanation\n");
 
             foreach (var carDetail in carManager.GetCarDetails().Data)
             {
@@ -99,7 +99,7 @@ namespace ConsoleUI
 
         private static void CarDetailTest()
         {
-            Console.WriteLine("Araba\tRenk\tGünlük Kirası\tAçıklama\n");
+            Console.WriteLine("Car\tColour\tDaily Rental\texplanation\n");
             CarManager carManager = new CarManager(new EfCarDal());
             foreach (var carDetail in carManager.GetCarDetails().Data)
             {
@@ -133,12 +133,12 @@ namespace ConsoleUI
             Console.WriteLine("\n");
             foreach (var car in carManager.GetAll().Data)
             {
-                Console.WriteLine(car.Description + "\nGünlük Kirası: " + car.DailyPrice);
+                Console.WriteLine(car.Description + "\nDaily Rental: " + car.DailyPrice);
             }
-            Console.WriteLine("\nSiyah Renkli Arabalar\n");
+            Console.WriteLine("\nBlack Color Cars\n");
             foreach (var car in carManager.GetAllByColorId(2).Data)
             {
-                Console.WriteLine(car.Description + "\nGünlük Kirası: " + car.DailyPrice);
+                Console.WriteLine(car.Description + "\nDaily Rental: " + car.DailyPrice);
             }
         }
 
@@ -147,7 +147,7 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new InMemoryCarDal());
             foreach (var car in carManager.GetAllByModelYear(2019).Data)
             {
-                Console.WriteLine(car.Description + "\nGünlük Kirası: " + car.DailyPrice);
+                Console.WriteLine(car.Description + "\nDaily Rental: " + car.DailyPrice);
             }
         }
     }

@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using WepAPI.Models;
+using WebAPI.Models;
 
-namespace WepAPI.Controllers
+namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -28,7 +28,7 @@ namespace WepAPI.Controllers
         [HttpGet("photos")]
         public IActionResult GetAll(int carId)
         {
-            var result = _carImageService.GetAllByCarId(carId);
+            var result = _carImageService.GetAllByCarId(carId, Path.Combine(_webHostEnvironment.WebRootPath, "uploads", "default_car_image.jpg"));
             if (result.Success)
             {
                 return Ok(result);
@@ -39,12 +39,12 @@ namespace WepAPI.Controllers
         [HttpPost("add")]
         public IActionResult Add([FromForm(Name = ("carId"))] int carId, [FromForm] FileUpload image)
         {
-            string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            var extension = image.File.FileName.Split('.')[1]; // dosya isminin noktadan sonrası uzantıdır
+            var extension = image.File.FileName.Split('.')[1]; // is the extension of the filename after the dot
             Guid guid = Guid.NewGuid();
             var imageName = guid.ToString() + "." + extension;
             var imagePath = path + imageName;

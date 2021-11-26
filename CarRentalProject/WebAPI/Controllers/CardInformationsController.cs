@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WepAPI.Controllers
+namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,9 +17,9 @@ namespace WepAPI.Controllers
         {
             if (card.CardId == MyCard.cardInformation.CardId && card.CardCvc == MyCard.cardInformation.CardCvc)
             {
-                return Ok(new SuccessResult("Kart kabul edildi."));
+                return Ok(new SuccessResult("Card accepted."));
             }
-            return BadRequest(new ErrorResult("Kart kabul edilmedi."));
+            return BadRequest(new ErrorResult("Card not accepted."));
         }
 
         [HttpGet("pay")]
@@ -28,9 +28,9 @@ namespace WepAPI.Controllers
             if (price < MyCard.Balance)
             {
                 MyCard.Balance = MyCard.Balance - price;
-                return Ok(new SuccessResult("Ödeme işlemi başarılı."));
+                return Ok(new SuccessResult("Payment transaction successful."));
             }
-            return BadRequest(new ErrorResult("Ödeme işlemi başarısız."));
+            return BadRequest(new ErrorResult("Payment transaction failed."));
         }
     }
 

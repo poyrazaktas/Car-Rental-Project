@@ -15,12 +15,13 @@ namespace DataAccess.Concrete.InMemory
 
         public InMemoryCarDal()
         {
-            _cars = new List<Car> {
-                new Car{Id=1,BrandId=1,ColorId=1,ModelYear=2017,DailyPrice=150,Description="4X4 DİZEL MANUEL DACİA DUSTER ,BAKIMLI DÜŞÜK KM DE"},
-                new Car{Id=2,BrandId=2,ColorId=1,ModelYear=2019,DailyPrice=133,Description="KİRALIK SIFIR KM RENAULT SYMBOL"},
-                new Car{Id=3,BrandId=3,ColorId=2,ModelYear=2019,DailyPrice=750,Description="ŞÖFÖRLÜ ULTRA VİP MERCEDES VİTO SEVDİKLERİNİZİ ŞIMARTIN"},
-                new Car{Id=4,BrandId=2,ColorId=1,ModelYear=2012,DailyPrice=112,Description="112 TL YE GÜNLÜK KİRALIK RENAULT CLİO5 BENZİNLİ ADRESE TESLİM"},
-                new Car{Id=5,BrandId=3,ColorId=1,ModelYear=2015,DailyPrice=400,Description="*KİRALIK LÜX ARAÇLAR MERCEDES *C-180*2015 YENİ MODEL*FUL+FUL"},
+            _cars = new List<Car>
+            {
+                new Car{Id=1,BrandId=1,ColorId=1,ModelYear=2017,DailyPrice=150,Description="4X4 DIESEL MANUAL DACIA DUSTER, MAINTAINED AT LOW KM"},
+                new Car{Id=2,BrandId=2,ColorId=1,ModelYear=2019,DailyPrice=133,Description="KRALIK SIFIR KM RENAULT SYMBOL"},
+                new Car{Id=3,BrandId=3,ColorId=2,ModelYear=2019,DailyPrice=750,Description="ULTRA VIP MERCEDES VITO WITH DRIVER PAMP YOUR LOVED ONES"},
+                new Car{Id=4,BrandId=2,ColorId=1,ModelYear=2012,DailyPrice=112,Description="112 TL DAILY RENTAL RENAULT CLIO5 GASOLINE DELIVERY TO ADDRESS"},
+                new Car{Id=5,BrandId=3,ColorId=1,ModelYear=2015,DailyPrice=400,Description="LUXURIOUS VEHICLES FOR RENT MERCEDES *C-180*2015 NEW MODEL*FUL+FUL"},
             };
         }
 
@@ -50,7 +51,7 @@ namespace DataAccess.Concrete.InMemory
 
         public List<CarDetailDto> GetCarDetails(Expression<Func<CarDetailDto, bool>> filter = null)
         {
-            Console.WriteLine("InMemory' de SQL işlemleri yapılamaz.");
+            Console.WriteLine("SQL operations cannot be performed in InMemory.");
             return null;
         }
 
