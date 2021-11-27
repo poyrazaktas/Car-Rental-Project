@@ -8,65 +8,65 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string CarAdded = "Araba başarıyla eklendi.";
-        public static string CarUpdated = "Araba başarıyla güncellendi.";
-        public static string CarDeleted = "Araba başarıyla silindi.";
-        public static string CarsListed = "Arabalar başarıyla listelendi.";
+        public static string CarAdded = "The car has been successfully added.";
+        public static string CarUpdated = "The car has been successfully updated.";
+        public static string CarDeleted = "The car was successfully deleted.";
+        public static string CarsListed = "Cars listed successfully.";
 
-        public static string ErrorAddCar = "Araba eklenemedi.";
-        public static string ErrorUpdateCar = "Araba güncellenemedi.";
-        public static string ErrorDeleteCar = "Araba silinemedi.";
-        public static string ErrorListCars = "Arabalar listelenemedi.";
+        public static string ErrorAddCar = "The car could not be added.";
+        public static string ErrorUpdateCar = "The car could not be updated.";
+        public static string ErrorDeleteCar = "The car could not be deleted.";
+        public static string ErrorListCars = "The cars could not be listed.";
 
-        public static string BrandAdded = "Marka başarıyla eklendi.";
-        public static string BrandUpdated = "Marka başarıyla güncellendi.";
-        public static string BrandDeleted = "Marka başarıyla silindi.";
-        public static string BrandsListed = "Markalar başarıyla listelendi.";
+        public static string BrandAdded = "The brand has been successfully added.";
+        public static string BrandUpdated = "The brand has been successfully updated.";
+        public static string BrandDeleted = "The brand has been successfully deleted.";
+        public static string BrandsListed = "Brands listed successfully.";
 
-        public static string ColorAdded = "Renk başarıyla eklendi.";
-        public static string ColorUpdated = "Renk başarıyla güncellendi.";
-        public static string ColorDeleted = "Renk başarıyla silindi.";
-        public static string ColorsListed = "Renkler başarıyla listelendi.";
+        public static string ColorAdded = "Color successfully added.";
+        public static string ColorUpdated = "Color successfully updated.";
+        public static string ColorDeleted = "The color has been successfully removed.";
+        public static string ColorsListed = "Colors listed successfully.";
 
-        public static string UserAdded = "Kullanıcı başarıyla eklendi.";
-        public static string UserUpdated = "Kullanıcı başarıyla güncellendi.";
-        public static string UserDeleted = "Kullanıcı başarıyla silindi.";
-        public static string UsersListed = "Kullanıcılar başarıyla listelendi.";
+        public static string UserAdded = "The user has been successfully added.";
+        public static string UserUpdated = "The user has been successfully updated.";
+        public static string UserDeleted = "The user has been successfully deleted.";
+        public static string UsersListed = "Users are listed successfully.";
 
-        public static string CustomerAdded = "Müşteri başarıyla eklendi.";
-        public static string CustomerUpdated = "Müşteri başarıyla güncellendi.";
-        public static string CustomerDeleted = "Müşteri başarıyla silindi.";
-        public static string CustomersListed = "Müşteriler başarıyla listelendi.";
+        public static string CustomerAdded = "The client has been successfully added.";
+        public static string CustomerUpdated = "The client has been successfully updated.";
+        public static string CustomerDeleted = "The client has been successfully deleted.";
+        public static string CustomersListed = "Customers listed successfully.";
 
-        public static string RentalAdded = "Kiralama başarıyla eklendi.";
-        public static string RentalUpdated = "Kiralama başarıyla güncellendi.";
-        public static string RentalDeleted = "Kiralama başarıyla silindi.";
-        public static string RentalsListed = "Kiralamalar başarıyla listelendi.";
+        public static string RentalAdded = "The lease has been successfully added.";
+        public static string RentalUpdated = "The lease has been successfully updated.";
+        public static string RentalDeleted = "The lease has been successfully deleted.";
+        public static string RentalsListed = "Leases are listed successfully.";
 
-        public static string ErrorAddRental = "Kiralama eklenemedi.";
-        public static string ErrorUpdateRental = "Kiralama güncellenemedi.";
-        public static string ErrorDeleteRental = "Kiralama silinemedi.";
-        public static string ErrorListRentals = "Kiralama listelenemedi.";
+        public static string ErrorAddRental = "Could not add lease.";
+        public static string ErrorUpdateRental = "The lease could not be updated.";
+        public static string ErrorDeleteRental = "The lease could not be deleted.";
+        public static string ErrorListRentals = "The rental could not be listed.";
 
-        public static string ErrorBrandExists = "Sistemde aynı marka var.";
-        public static string ErrorColorExists = "Sistemde aynı renk var.";
+        public static string ErrorBrandExists = "There is the same brand in the system.";
+        public static string ErrorColorExists = "The system has the same color.";
 
-        public static string CarImageAdded = "Araba fotoğrafı başarıyla eklendi.";
-        public static string CarImageUpdated = "Araba fotoğrafı başarıyla güncellendi.";
-        public static string CarImageDeleted = "Araba fotoğrafı başarıyla silindi.";
-        public static string CarImagesListed = "Araba fotoğrafları başarıyla listelendi.";
-        public static string ErrorAddCarImage = "Arabanın hali hazırda çok fazla fotoğrafı var.";
-        public static string ErrorNoCarImage = "Arabanın herhangi bir fotoğrafı yok.";
+        public static string CarImageAdded = "The car photo has been successfully added.";
+        public static string CarImageUpdated = "The car photo has been successfully updated.";
+        public static string CarImageDeleted = "Car photo deleted successfully.";
+        public static string CarImagesListed = "Car photos listed successfully.";
+        public static string ErrorAddCarImage = "There are already too many photos of the car.";
+        public static string ErrorNoCarImage = "There are no photos of the car.";
 
-        public static string ErrorNoSuchData = "Silinecek veri kalmadı.";
+        public static string ErrorNoSuchData = "There is no data left to delete.";
 
-        public static string AuthorizationDenied = "Yetkilendirme kabul edilmedi.";
+        public static string AuthorizationDenied = "Authorization not accepted.";
 
-        public static string UserRegistered = "Kayıt başarılı.";
-        public static string UserNotFound = "Kullanıcı bulunamadı.";
-        public static string PasswordError = "Parola hatası";
-        public static string SuccessfulLogin = "Giriş başarılı.";
-        public static string UserAlreadyExists = "Kullanıcı zaten var.";
-        public static string AccessTokenCreated = "Erişim tokeni oluşturuldu.";
+        public static string UserRegistered = "Registration Successful.";
+        public static string UserNotFound = "User not found.";
+        public static string PasswordError = "Password error";
+        public static string SuccessfulLogin = "Login successful.";
+        public static string UserAlreadyExists = "The user already exists.";
+        public static string AccessTokenCreated = "Access token created.";
     }
 }

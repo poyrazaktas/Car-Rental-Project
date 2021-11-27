@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe((response) => {
         this.localStorageService.setToken(response.data.token);
         this.findexService.customerFindexScore = this.findexService.getFindexScoreForCustomer();
-        console.log('Kullanıcı findeks puanı: ' + this.findexService.customerFindexScore);
-        this.toastrService.success('Giriş Başarılı');
+        console.log('User findex score: ' + this.findexService.customerFindexScore);
+        this.toastrService.success('Login successful');
         this.router.navigate(['cars']).then(r => {
           this.getCustomerByMail(loginModel.email);
         });
@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
   getCustomerByMail(email: string) {
     this.customerService.getCustomerByMail(email).subscribe((response) => {
       this.customerService.setCurrentUser(response.data);
+      this.localStorageService.setFullUserDetails(response.data);
       this.localStorageService.setUser(response.data.firstName + ' ' + response.data.lastName);
     });
   }

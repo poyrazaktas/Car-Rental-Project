@@ -57,7 +57,7 @@ export class CustomerDetailComponent implements OnInit {
     const userModel = Object.assign({}, this.userUpdateForm.value);
     this.customerService.updateUser(userModel).subscribe((response) => {
       this.localStorageService.setUser(userModel.firstName + ' ' + userModel.lastName);
-      this.toastrService.success(response.message, 'Kullanıcı güncellemesi başarılı!');
+      this.toastrService.success(response.message, 'User Update Successful!');
     }, responseError => {
       this.toastrService.error(responseError.error.message);
     });
@@ -67,7 +67,7 @@ export class CustomerDetailComponent implements OnInit {
   updateCustomer() {
     const customerModel = Object.assign({}, this.customerUpdateForm.value);
     this.customerService.updateCustomer(customerModel).subscribe((response) => {
-      this.toastrService.success(response.message, 'Şirket güncellemesi başarılı!');
+      this.toastrService.success(response.message, 'Company Update Successful!');
     }, responseError => {
       this.toastrService.error(responseError.error.message);
     });

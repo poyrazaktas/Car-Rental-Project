@@ -23,18 +23,18 @@
             {{localStorageService.getUser()}}
           </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/customer-detail">Profil Düzenle</a></li>
-            <li><a class="dropdown-item">Şifre Değiştir</a></li>
+            <li><a class="dropdown-item" routerLink="/customer-detail">Edit Profile</a></li>
+            <li><a class="dropdown-item">Change Password</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" (click)="logOut()">Çıkış Yap</a></li>
+            <li><a class="dropdown-item" (click)="logOut()">Logout</a></li>
           </ul>
         </div>
       </div>
       <form class="d-flex" *ngIf="!localStorageService.getUser()">
-        <button class="btn btn-outline-warning" routerLink="/register">Kayıt Ol</button>
-        <button class="btn btn-outline-success" routerLink="/login">Giriş</button>
+        <button class="btn btn-outline-warning" routerLink="/register">Register</button>
+        <button class="btn btn-outline-success" routerLink="/login">Login</button>
       </form>
     </div>
   </div>

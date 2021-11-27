@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Customer } from 'src/app/models/customer';
+import { Injectable, enableProdMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
-import { Customer } from '../models/customer';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { ResponseModel } from '../models/responseModel';
 import { User } from '../models/user';
 import { AppSettings } from '../app-settings';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class CustomerService {
 
   private currentUser: Customer;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
   getCustomers(): Observable<ListResponseModel<Customer>> {
     const extension = 'customers/details';
@@ -46,6 +47,12 @@ export class CustomerService {
   }
 
   getCurrentUser(): Customer {
+    var userInStorage = this.localStorageService.getFullUserDetails();
+
+    if (!this.currentUser && userInStorage) {
+      this.setCurrentUser(userInStorage);
+    }
+
     return this.currentUser;
   }
 

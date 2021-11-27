@@ -32,7 +32,7 @@ export class BrandAddComponent implements OnInit {
     if (this.brandAddForm.valid) {
       let brandModel = Object.assign({}, this.brandAddForm.value);
       this.brandService.addBrand(brandModel).subscribe((response) => {
-        this.toastrService.success(response.message, 'Başarılı!');
+        this.toastrService.success(response.message, 'Successful!');
       }, responseError => {
         this.toastrService.error(responseError.error.message);
       });

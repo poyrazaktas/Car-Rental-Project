@@ -1,22 +1,26 @@
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">Ödeme Bilgileri</h5>
+    <h5 class="card-title">Payment information</h5>
   </div>
   <div class="card-body">
     <div class="mb-3">
-      <label for="cardId" class="form-label">Kart Numarası</label>
+      <label for="cardId" class="form-label">Card number</label>
       <input type="text" class="form-control" [(ngModel)]="cardId"
-             id="cardId" placeholder="Kart üzerindeki hesap numarasını giriniz">
+             id="cardId" placeholder="Enter the account number on the card">
+
+             <div class="form-text fst-italic">Demo card number: 1234567890</div>
     </div>
     <div class="mb-3">
-      <label for="cardCvc" class="form-label">Kart CVC</label>
+      <label for="cardCvc" class="form-label">Card CVC</label>
       <input type="text" class="form-control" id="cardCvc" [(ngModel)]="cardCvc"
-             placeholder="Kart üzerindeki 3 haneli güvenlik numarasını giriniz">
+             placeholder="Enter the 3-digit security number on the card">
+
+             <div class="form-text fst-italic">Demo card cvc: 123</div>
     </div>
   </div>
   <div class="card-footer">
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" type="button" (click)="checkCardInfo()">Ödemeyi Onayla</button>
+      <button class="btn btn-primary" type="button" (click)="checkCardInfo()">Confirm Payment</button>
     </div>
   </div>
 </div>

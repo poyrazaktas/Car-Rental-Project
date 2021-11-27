@@ -42,8 +42,8 @@ export class RegisterComponent implements OnInit {
       const registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe((response) => {
         this.localStorageService.setToken(response.data.token);
-        this.toastrService.success('Kayıt Başarılı!');
-        this.router.navigate(['login']).then(r => this.toastrService.info('Lütfen, giriş yapınız!'));
+        this.toastrService.success('Registration Successful!');
+        this.router.navigate(['login']).then(r => this.toastrService.info('Please login!'));
       }, error => {
         this.toastrService.error(error.error);
       });

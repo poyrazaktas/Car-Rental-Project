@@ -16,7 +16,7 @@ Bu projede backendini Asp.net Core versiyon 3.1 ile geliştirdiğim araba kirala
 
 ## Çalıştırma Adımları
 
-1. Eğer backend farklı bir portta çalışıyorsa [README](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.md#proje-%C3%A7al%C4%B1%C5%9Ft%C4%B1rma-ad%C4%B1mlar%C4%B1) belirtilen güncelleme yapılması gerekir.
+1. Eğer backend farklı bir portta çalışıyorsa [README](https://github.com/poyrazaktas/Car-Rental-Project/blob/master/README.md#proje-%C3%A7al%C4%B1%C5%9Ft%C4%B1rma-ad%C4%B1mlar%C4%B1) belirtilen Updateme yapılması gerekir.
 2. `npm install` ile projenin bağımlılıkları indirilir.
 3. `ng serve` ile sunucu çalıştırılır. `http://localhost:4200/` gidilir.(*opsiyonel*)
 4. `ng serve --open` ile proje sistemin varsayılan tarayıcısı üzerinden çalıştırılır.(*opsiyonel*)

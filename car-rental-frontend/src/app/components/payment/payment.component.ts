@@ -34,13 +34,13 @@ export class PaymentComponent implements OnInit {
       this.toastrService.success(response.message);
       this.pay();
     }, error => {
-      this.toastrService.error('Kart bilgileri geçersiz.');
+      this.toastrService.error('Card information is invalid.');
     });
   }
 
   // tslint:disable-next-line:typedef
   pay() {
-    // Günlük Kira * Kiralanacak Gün Sayısı
+    // Daily Rental * Number of Days to Rent
     const price = this.currentRental.carDailyPrice * Math.abs(
       new Date(this.currentRental.returnDate).getDate() -
       new Date(this.currentRental.rentDate).getDate());
@@ -48,7 +48,7 @@ export class PaymentComponent implements OnInit {
       this.toastrService.success(response.message);
       this.rentACar();
     }, error => {
-      this.toastrService.error('Bakiye yeterli değil.', 'Ödeme başarısız.');
+      this.toastrService.error('The balance is not enough.', 'Payment failed.');
       this.location.back();
     });
   }
@@ -59,7 +59,7 @@ export class PaymentComponent implements OnInit {
       this.toastrService.success(response.message);
       this.router.navigateByUrl('/rentals');
     }, error => {
-      this.toastrService.error('Kiralama eklenemedi.', 'Beklenemyen Hata');
+      this.toastrService.error('Could not add lease.', 'Unexpected Error');
     });
   }
 }
