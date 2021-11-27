@@ -2,34 +2,34 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">Profili Düzenle</h5>
+        <h5 class="card-title">Edit Profile</h5>
       </div>
       <div class="card-body">
         <form [formGroup]="userUpdateForm">
           <div class="mb-3">
-            <label for="firstName">Kullanıcı İsim</label>
+            <label for="firstName">First Name</label>
             <input type="text" id="firstName" formControlName="firstName"
                    class="form-control" placeholder="{{customer.firstName}}">
           </div>
           <div class="mb-3">
-            <label for="lastName">Kullanıcı Soyisim</label>
+            <label for="lastName">Last Name</label>
             <input type="text" id="lastName" formControlName="lastName"
                    class="form-control" placeholder="{{customer.lastName}}">
           </div>
           <div class="mb-3">
-            <label for="email">Kullanıcı Email</label>
+            <label for="email">Email</label>
             <input type="text" id="email" formControlName="email"
                    class="form-control" placeholder="{{customer.email}}">
           </div>
           <div class="mb-3">
-            <label for="email">Kullanıcı Şifre</label>
+            <label for="email">Password</label>
             <input type="password" id="password" formControlName="password"
                    class="form-control">
           </div>
         </form>
         <form [formGroup]="customerUpdateForm">
           <div class="mb-3">
-            <label for="firstName">Kullanıcı Şirket</label>
+            <label for="companyName">Company</label>
             <input type="text" id="companyName" formControlName="companyName"
                    class="form-control" placeholder="{{customer.companyName}}">
           </div>
@@ -37,7 +37,7 @@
         </form>
       </div>
       <div class="card-footer">
-        <button class="btn btn-primary" (click)="update()">Güncelle</button>
+        <button class="btn btn-primary" (click)="update()">Update</button>
       </div>
     </div>
   </div>

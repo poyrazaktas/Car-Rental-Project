@@ -24,6 +24,7 @@ export class NaviComponent implements OnInit {
   logOut() {
     this.localStorageService.removeToken();
     this.localStorageService.removeUser();
+    this.localStorageService.removeFullUserDetails();
 
   }
 }

@@ -2,32 +2,32 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title"> Arabayı Güncelle</h5>
+        <h5 class="card-title"> Update Car</h5>
       </div>
       <div class="card-body">
         <form [formGroup]="carUpdateForm">
           <div class="mb-3">
-            <label for="colorId">Renk Id</label>
+            <label for="colorId">Color Id</label>
             <input type="number" id="colorId" formControlName="colorId"
                    class="form-control" placeholder="{{currentCar.colorId}}">
           </div>
           <div class="mb-3">
-            <label for="brandId">Marka Id</label>
+            <label for="brandId">Brand Id</label>
             <input type="number" id="brandId" formControlName="brandId"
                    class="form-control" placeholder="{{currentCar.brandId}}">
           </div>
           <div class="mb-3">
-            <label for="modelYear">Model Yılı</label>
+            <label for="modelYear">Model Year</label>
             <input type="number" id="modelYear" formControlName="modelYear"
                    class="form-control" placeholder="{{currentCar.modelYear}}">
           </div>
           <div class="mb-3">
-            <label for="dailyPrice">Günlük Kirası</label>
+            <label for="dailyPrice">Daily Rental</label>
             <input type="number" id="dailyPrice" formControlName="dailyPrice"
                    class="form-control" placeholder="{{currentCar.carDailyPrice}}">
           </div>
           <div class="mb-3">
-            <label for="description">Araba Açıklaması</label>
+            <label for="description">Car Description</label>
             <input type="text" id="description" formControlName="description"
                    class="form-control" placeholder="{{currentCar.carDescription}}">
           </div>
@@ -35,7 +35,7 @@
       </div>
       <div class="card-footer">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-primary" (click)="update()">Güncelle</button>
+          <button class="btn btn-primary" (click)="update()">Update</button>
         </div>
       </div>
     </div>

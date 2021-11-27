@@ -42,8 +42,8 @@ export class RentACarComponent implements OnInit {
     });
     const carFindexScore = this.findexService.getFindexScore();
     if (carFindexScore > this.findexService.customerFindexScore) {
-      this.toastrService.error('Kullanıcı findeks puanı : ' + this.findexService.customerFindexScore +
-        '\nBu arabayı kiralamak için yetersiz!\nAraba findex puanı : ' + carFindexScore);
+      this.toastrService.error('User findex score : ' + this.findexService.customerFindexScore +
+        '\nInsufficient to rent this car!\ncar findex score : ' + carFindexScore);
       this.router.navigate(['cars']);
     }
   }
@@ -66,10 +66,10 @@ export class RentACarComponent implements OnInit {
       this.rental.carDailyPrice = this.currentCar.carDailyPrice;
       this.rentalService.setCurrentRental(this.rental);
       console.log(this.rental);
-      this.toastrService.success('Ödeme sayfasına yönlendiriliyorsunuz.', 'İstek Başarılı');
+      this.toastrService.success('You are redirected to the payment page.', 'Request Successful');
       this.router.navigateByUrl('/payment');
     }, error => {
-      this.toastrService.error('Kiralanmak istenen araba henüz teslim edilmemiş.', 'İstek Başarısız');
+      this.toastrService.error('The car to be rented has not been delivered yet..', 'Request Failed');
       this.router.navigateByUrl('/cars');
     });
 

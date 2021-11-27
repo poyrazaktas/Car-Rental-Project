@@ -7,7 +7,7 @@ import { Customer } from '../models/customer';
 export class LocalStorageService {
   currentCustomer: Customer;
 
-  constructor() {}
+  constructor() { }
 
   // tslint:disable-next-line:typedef
   getToken() {
@@ -37,6 +37,34 @@ export class LocalStorageService {
   // tslint:disable-next-line:typedef
   removeUser() {
     localStorage.removeItem('user');
+  }
+
+  // tslint:disable-next-line:typedef
+  getFullUserDetails(): Customer {
+    var userJSON = JSON.parse(localStorage.getItem('fulluserdetails'));
+    if (userJSON) {
+      var user: Customer = {
+        userId: userJSON.userId,
+        companyName: userJSON.companyName,
+        customerId: userJSON.customerId,
+        email: userJSON.email,
+        firstName: userJSON.firstName,
+        lastName: userJSON.lastName
+      };
+      return user;
+    }
+
+    return null;
+  }
+
+  // tslint:disable-next-line:typedef
+  setFullUserDetails(user) {
+    localStorage.setItem('fulluserdetails', JSON.stringify(user));
+  }
+
+  // tslint:disable-next-line:typedef
+  removeFullUserDetails() {
+    localStorage.removeItem('fulluserdetails');
   }
 
   refresh(): void {

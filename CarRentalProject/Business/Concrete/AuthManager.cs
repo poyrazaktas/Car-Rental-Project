@@ -39,7 +39,7 @@ namespace Business.Concrete
             };
             _userService.Add(user);
             _customerService.Add(new Customer { UserId = user.Id });
-            _userOperationClaimService.Add(new UserOperationClaim { UserId = user.Id, OperationClaimId = 3 });
+            _userOperationClaimService.Add(new UserOperationClaim { UserId = user.Id, OperationClaimId = Authorization.User });
             return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 

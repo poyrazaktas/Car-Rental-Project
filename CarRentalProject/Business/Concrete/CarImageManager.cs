@@ -56,7 +56,6 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageDeleted);
         }
 
-        [CacheAspect]
         public IDataResult<List<CarImage>> GetAllByCarId(int carId, string defaultCarImagePath)
         {
             var result = Rules.Run(CheckIfCarImageExists(carId));

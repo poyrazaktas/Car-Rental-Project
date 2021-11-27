@@ -3,15 +3,15 @@
   <app-car-detail class="card-img-top"></app-car-detail>
   <div class="card-body">
     <h5 class="card-title">{{currentCar.brandName}}</h5>
-    <p class="card-text"><b>Açıklama: </b>{{currentCar.carDescription}}</p>
-    <p class="card-text"><b>Renk: </b>{{currentCar.carColor}}</p>
-    <p class="card-text"><b>Günlük fiyatı: </b>{{currentCar.carDailyPrice}} TL</p>
+    <p class="card-text"><b>Description: </b>{{currentCar.carDescription}}</p>
+    <p class="card-text"><b>Color: </b>{{currentCar.carColor}}</p>
+    <p class="card-text"><b>Daily price: </b>{{currentCar.carDailyPrice}} TL</p>
     <div>
-      <b>Alış Tarihi: </b>
+      <b>Rent Date: </b>
       <input type="date" class="form-control" id="rentDate" [(ngModel)]="rentDate">
-      <b>Bırakış Tarihi: </b>
+      <b>Return Date: </b>
       <input type="date" class="form-control" id="returnDate" [(ngModel)]="returnDate">
     </div>
-    <button class="btn btn-primary" (click)="createRental()">Kirala</button>
+    <button class="btn btn-primary" (click)="createRental()">Rent</button>
   </div>
 </div>
